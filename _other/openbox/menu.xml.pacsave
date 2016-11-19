@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+
+<menu id="apps-util-menu" label="util">
+  <item label="urxvt">
+    <action name="Execute">
+      <command>urxvt</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="urxvt(root)">
+    <action name="Execute">
+      <command>gksu -g urxvt</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+   <item label ="pcmanfm">
+  <action name="Execute">
+   <command>pcmanfm</command>
+    <startupnotify>
+        <enabled>yes</enabled>
+    </startupnotify>
+  </action>
+</item>
+<item label ="pcmanfm(root)">
+  <action name="Execute">
+   <command>gksu -g pcmanfm</command>
+    <startupnotify>
+        <enabled>yes</enabled>
+    </startupnotify>
+  </action>
+</item>
+   <item label="xpad">
+    <action name="Execute">
+      <command>xpad</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item> 
+</menu>
+
+<menu id="apps-code-menu" label="code">
+<item label ="emacs">
+  <action name="Execute">
+   <command>emacs</command>
+    <startupnotify>
+        <enabled>yes</enabled>
+    </startupnotify>
+  </action>
+</item>
+ <item label ="intellij">
+  <action name="Execute">
+   <command>idea.sh</command>
+    <startupnotify>
+        <enabled>yes</enabled>
+    </startupnotify>
+  </action>
+</item>
+  <item label="medit">
+    <action name="Execute">
+      <command>medit</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+<item label ="tiled">
+  <action name="Execute">
+   <command>tiled</command>
+    <startupnotify>
+        <enabled>yes</enabled>
+    </startupnotify>
+  </action>
+</item>
+</menu>
+
+<menu id="apps-cr-menu" label="creative">
+<item label ="rns">
+  <action name="Execute">
+   <command>renoise</command>
+    <startupnotify>
+        <enabled>yes</enabled>
+    </startupnotify>
+  </action>
+</item>
+<item label ="krita">
+  <action name="Execute">
+   <command>krita</command>
+    <startupnotify>
+        <enabled>yes</enabled>
+    </startupnotify>
+  </action>
+</item>
+<item label ="kolourpaint">
+  <action name="Execute">
+   <command>kolourpaint</command>
+    <startupnotify>
+        <enabled>yes</enabled>
+    </startupnotify>
+  </action>
+</item>
+<item label ="blender">
+  <action name="Execute">
+   <command>blender</command>
+    <startupnotify>
+        <enabled>yes</enabled>
+    </startupnotify>
+  </action>
+</item>
+<item label ="snd">
+  <action name="Execute">
+   <command>snd</command>
+    <startupnotify>
+        <enabled>yes</enabled>
+    </startupnotify>
+  </action>
+</item>
+<item label ="audacity">
+  <action name="Execute">
+   <command>audacity</command>
+    <startupnotify>
+        <enabled>yes</enabled>
+    </startupnotify>
+  </action>
+</item>
+
+</menu>
+
+<menu id="apps-net-menu" label="net">
+  <item label="firefox">
+    <action name="Execute">
+      <command>firefox</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+        <wmclass>Firefox</wmclass>
+      </startupnotify>
+    </action>
+  </item>
+    <item label="vivaldi">
+    <action name="Execute">
+      <command>vivaldi-stable</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+        <wmclass>Firefox</wmclass>
+      </startupnotify>
+    </action>
+  </item>
+  <separator />
+    <item label="hexchat">
+    <action name="Execute">
+      <command>hexchat</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+   <item label="soulseekqt">
+    <action name="Execute">
+      <command>soulseekqt</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+        <wmclass>Firefox</wmclass>
+      </startupnotify>
+    </action>
+  </item>
+     <item label="transmission">
+    <action name="Execute">
+      <command>transmission-gtk</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+        <wmclass>Firefox</wmclass>
+      </startupnotify>
+    </action>
+  </item>
+</menu>
+
+<menu id="apps-multimedia-menu" label="media">
+<item label ="vlc">
+  <action name="Execute">
+   <command>vlc</command>
+    <startupnotify>
+        <enabled>yes</enabled>
+    </startupnotify>
+  </action>
+</item>
+<item label ="mcomix">
+  <action name="Execute">
+   <command>mcomix</command>
+    <startupnotify>
+        <enabled>yes</enabled>
+    </startupnotify>
+  </action>
+</item>
+<item label ="quodlibet">
+  <action name="Execute">
+   <command>quodlibet</command>
+    <startupnotify>
+        <enabled>yes</enabled>
+    </startupnotify>
+  </action>
+</item>
+</menu>
+
+<menu id="system-redshift-menu" label="redshift">
+  <item label="redshiftOff">
+    <action name="Execute">
+      <command>redshift -x</command>
+      <startupnotify><enabled>yes</enabled></startupnotify>
+    </action>
+  </item>
+<item label="redshift=1200">
+    <action name="Execute">
+      <command>redshift -O 1200</command>
+      <startupnotify><enabled>yes</enabled></startupnotify>
+    </action>
+  </item>
+   <item label="redshift=3000">
+    <action name="Execute">
+      <command>redshift -O 3000</command>
+      <startupnotify><enabled>yes</enabled></startupnotify>
+    </action>
+  </item>
+</menu>
+  
+<menu id="obconf-menu" label="openbox">
+  <item label="obconf">
+    <action name="Execute">
+      <command>obconf</command>
+      <startupnotify><enabled>yes</enabled></startupnotify>
+    </action>
+  </item>
+     <item label="openbox rc">
+    <action name="Execute">
+      <command>medit /home/mel/.config/openbox/rc.xml</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+   <item label="menu xml">
+    <action name="Execute">
+      <command>medit /etc/xdg/openbox/menu.xml</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+    <separator />
+  <item label="reconfigure">
+    <action name="Reconfigure" />
+  </item>
+</menu>
+  
+<menu id="system-menu" label="system">
+  <item label="tint2conf">
+    <action name="Execute">
+      <command>tint2conf</command>
+      <startupnotify><enabled>yes</enabled></startupnotify>
+    </action>
+  </item>
+ <item label="lxappearance">
+    <action name="Execute">
+      <command>lxappearance</command>
+      <startupnotify><enabled>yes</enabled></startupnotify>
+    </action>
+  </item>
+  <item label="pavucontrol">
+    <action name="Execute">
+      <command>pavucontrol</command>
+      <startupnotify><enabled>yes</enabled></startupnotify>
+    </action>
+  </item>
+ <separator />
+ <menu id="obconf-menu"/>
+ <separator />
+  <item label="taskmgr">
+    <action name="Execute">
+      <command>xfce4-taskmanager</command>
+      <startupnotify><enabled>yes</enabled></startupnotify>
+    </action>
+  </item>
+  <item label="log out">
+    <action name="Exit">
+      <prompt>yes</prompt>
+    </action>
+  </item>
+  <item label="reboot">
+    <action name="Execute">
+      <command>reboot</command>
+      <prompt>- restart? -</prompt>
+    </action>
+  </item>
+</menu>
+
+<menu id="root-menu" label="openBox">
+	<item label="prtsc">
+    <action name="Execute">
+      <command>bash /home/mel/Docs/scripts/screenshot.sh</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+<item label="prtsc region">
+    <action name="Execute">
+      <command>bash /home/mel/Docs/scripts/screenshotRegion.sh</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <separator label="==&amp;==" />
+   <menu id="apps-net-menu"/>
+  <menu id="apps-code-menu"/>
+  <menu id="apps-multimedia-menu"/>
+   <menu id="apps-cr-menu"/>
+  <menu id="apps-util-menu"/>
+  <separator label="==&amp;==" />
+  <menu id="system-redshift-menu"/>
+  <menu id="system-menu"/>
+  
+</menu>
+
+</openbox_menu>

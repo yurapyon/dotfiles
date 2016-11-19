@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<Colors>
+  <Color r="0x0000" g="0x9d5f" b="0x5dff">
+    <Extension>wav</Extension>
+  </Color>
+  <Color r="0x0000" g="0x0000" b="0x81d9">
+    <Extension>zip</Extension>
+    <Extension>gz</Extension>
+    <Extension>tgz</Extension>
+    <Extension>rar</Extension>
+    <Extension>bz2</Extension>
+    <Extension>7z</Extension>
+  </Color>
+  <Color r="0x6666" g="0xaaaa" b="0xffff">
+    <Extension>mdb</Extension>
+    <Extension>doc</Extension>
+    <Extension>pdf</Extension>
+    <Extension>ps</Extension>
+    <Extension>ppt</Extension>
+    <Extension>txt</Extension>
+    <Extension>po</Extension>
+    <Extension>xsl</Extension>
+    <Extension>xls</Extension>
+    <Extension>xml</Extension>
+    <Extension>html</Extension>
+    <Extension>htm</Extension>
+  </Color>
+  <Color r="0x0000" g="0xdddd" b="0x8427">
+    <Extension>mp3</Extension>
+    <Extension>ogg</Extension>
+    <Extension>flac</Extension>
+    <Extension>m4a</Extension>
+    <Extension>aif</Extension>
+  </Color>
+  <Color r="0xebce" g="0xe92f" b="0x3396">
+    <Extension>eps</Extension>
+    <Extension>bmp</Extension>
+    <Extension>svg</Extension>
+    <Extension>gif</Extension>
+    <Extension>png</Extension>
+    <Extension>jpg</Extension>
+    <Extension>jpeg</Extension>
+    <Extension>tif</Extension>
+    <Extension>tiff</Extension>
+  </Color>
+  <Color r="0x71c7" g="0xde0c" b="0x71c7">
+    <Extension>h</Extension>
+    <Extension>hh</Extension>
+  </Color>
+  <Color r="0x1ed0" g="0xd599" b="0x1ed0">
+    <Extension>c</Extension>
+    <Extension>cc</Extension>
+    <Extension>cpp</Extension>
+  </Color>
+  <Color r="0x8c63" g="0x0000" b="0x8c63">
+    <Extension>dll</Extension>
+    <Extension>o</Extension>
+    <Extension>lo</Extension>
+    <Extension>a</Extension>
+    <Extension>so</Extension>
+  </Color>
+  <Color r="0xffff" g="0x0000" b="0xffff">
+    <Extension>exe</Extension>
+  </Color>
+  <Color r="0xffff" g="0x32de" b="0xa569">
+    <Extension>asf</Extension>
+    <Extension>avi</Extension>
+    <Extension>mpg</Extension>
+    <Extension>mpeg</Extension>
+    <Extension>wmv</Extension>
+    <Extension>mkv</Extension>
+    <Extension>mp4</Extension>
+  </Color>
+  <Color r="0xffff" g="0x5378" b="0x4ab6">
+    <Extension>xrns</Extension>
+    <Extension>blend</Extension>
+    <Extension>blend1</Extension>
+    <Extension>psd</Extension>
+    <Extension>xcf</Extension>
+  </Color>
+  <Color type="Folder" r="0x2222" g="0x4444" b="0x0000"/>
+  <Color type="Mark2" r="0x0f0f" g="0xffff" b="0xffff"/>
+  <Color type="Mark1" r="0xffff" g="0xffff" b="0x0000"/>
+  <Color type="Default" r="0xcccc" g="0xcccc" b="0xcccc"/>
+</Colors>

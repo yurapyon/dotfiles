@@ -1,0 +1,319 @@
+# == ws ==
+ 
+set $ws1 "1??"
+set $ws2 "2%%"
+set $ws3 "3♡♡"
+set $ws4 "4>>"
+set $ws5 "5-⚥"
+set $ws6 "6(oo"
+set $ws7 "7chk"
+set $ws8 "8chk"
+set $ws9 "9chk"
+
+# switch to workspace
+bindsym $m+1 workspace $ws1
+bindsym $m+2 workspace $ws2
+bindsym $m+3 workspace $ws3
+bindsym $m+q workspace $ws4
+bindsym $m+w workspace $ws5
+bindsym $m+e workspace $ws6
+
+# move focused container to workspace
+bindsym $m+Mod1+1 move container to workspace $ws1
+bindsym $m+Mod1+2 move container to workspace $ws2
+bindsym $m+Mod1+3 move container to workspace $ws3
+bindsym $m+Mod1+q move container to workspace $ws4
+bindsym $m+Mod1+w move container to workspace $ws5
+bindsym $m+Mod1+e move container to workspace $ws6
+
+bindsym $m+Page_Up   workspace prev
+bindsym $m+Page_Down workspace next
+
+bindsym $m+Shift+n workspace prev
+bindsym $m+n       workspace next
+
+#workspace $ws1 output VGA0
+#workspace $ws2 output VGA0
+#workspace $ws3 output VGA0
+#workspace $ws4 output LVDS1
+#workspace $ws5 output LVDS1
+#workspace $ws6 output LVDS1
+
+# == run on startup ==
+
+exec urxvt
+# exec transmission-qt 
+
+# == windows ==
+
+for_window [title="^float$"] floating enable
+for_window [class="^.*"] border pixel 3
+smart_borders on
+
+for_window [class="transmission"]  floating enable
+for_window [class="mpv"] floating enable
+for_window [class="ibniz"] floating enable
+for_window [class="Gimp"] floating enable
+for_window [class="qjackctl"] floating enable
+for_window [class="ppsspp"] floating enable
+for_window [class="Skype"] floating enable
+
+assign [class="Firefox"]      $ws2
+assign [class="transmission"] $ws3
+assign [class="scide"]        $ws5
+
+#scide
+for_window [title="Stethoscope"] floating enable
+for_window [title="function plot"] floating enable
+for_window [title="Buffer plot"] floating enable
+for_window [title="Plot"] floating enable
+
+# == keys ==
+
+set $m  Mod4
+set $fm Mod1
+
+# reload config or i3
+bindsym $m+Shift+w reload
+bindsym $m+Shift+r restart
+
+# window - main
+bindsym $m+Shift+q kill
+bindsym $m+z split h
+bindsym $m+x split v
+bindsym $m+f fullscreen toggle
+bindsym $m+s sticky toggle
+
+# window - toggle floating
+bindsym $m+Shift+space floating toggle
+
+# window - toggle focus mode
+bindsym $m+space focus mode_toggle
+
+# window - focus
+bindsym $m+Left  focus left
+bindsym $m+Down  focus down
+bindsym $m+Up    focus up
+bindsym $m+Right focus right
+
+bindsym $m+h focus left
+bindsym $m+j focus down
+bindsym $m+k focus up
+bindsym $m+l focus right
+
+# window - move focused
+bindsym $m+$fm+Left  move left  33 px
+bindsym $m+$fm+Down  move down  33 px
+bindsym $m+$fm+Up    move up    33 px
+bindsym $m+$fm+Right move right 33 px
+
+bindsym $m+$fm+h move left  33 px
+bindsym $m+$fm+j move down  33 px
+bindsym $m+$fm+k move up    33 px
+bindsym $m+$fm+l move right 33 px
+
+# == mouse ==
+
+floating_modifier $m
+focus_follows_mouse no
+# bindsym --whole-window $m+button2 kill
+
+# == programs ==
+
+set $exc       exec --no-startup-id
+set $updatebar killall -USR1 i3status
+set $dmenu     dmenu_run -f -p "<3" -fn termsyn:bold -h 18 -nb "#eeeeee" -nf "#555555" -sb "#282828" -sf "#40bb7a"
+set $flterm    urxvt -T float
+
+bindsym $m+d          $exc $dmenu 
+bindsym $m+Return     $exc i3-sensible-terminal
+bindsym $m+$fm+Return $exc $flterm
+
+bindsym $m+y       $exc ~/documents/scripts/umpv.py $(xclip -o)
+bindsym $m+Shift+y $exc $flterm -e mpv $(xclip -o)
+# bindsym $m+$fm+y   $exc urxvt -T float -e youtube-dl --no-playlist $(xclip -o)
+
+bindsym $m+$fm+n $exc ncmpcpp-float
+
+bindsym $m+Shift+p $exc mpc toggle && $updatebar
+bindsym $m+Shift+i $exc luajit ~/documents/scripts/mpcnext.lua prev && $updatebar
+bindsym $m+Shift+o $exc luajit ~/documents/scripts/mpcnext.lua next && $updatebar
+
+bindsym Ctrl+Mod1+Delete $exc $flterm -e top -o %CPU
+
+bindsym Print    $exc "maim /mnt/media/images/screenshots/$(date +%F-%T).png"
+bindsym $m+Print $exc "maim -s -c 0,0.8,0.6,1 /mnt/media/images/screenshots/$(date +%F-%T).png"
+
+bindsym XF86AudioRaiseVolume $exc amixer -qc 1 sset Master 2+ && amixer -qc 2 sset PCM 2+ || true && $updatebar
+bindsym XF86AudioLowerVolume $exc amixer -qc 1 sset Master 2- && amixer -qc 2 sset PCM 2- || true && $updatebar
+#bindsym XF86AudioMute        $exc amixer -qc 1 sset Master toggle && amixer -qc 2 sset PCM toggle || true && $updatebar
+
+bindsym $m+F6 $exc redshift -O 1200
+bindsym $m+F7 $exc redshift -O 2400
+bindsym $m+F5 $exc redshift -x
+
+# == modes ==
+
+bindsym $m+c mode "$extra"
+set $extra extra
+mode "$extra"
+{
+    bindsym $m+1 workspace $ws1
+    bindsym $m+2 workspace $ws2
+    bindsym $m+3 workspace $ws3
+    bindsym $m+q workspace $ws4
+    bindsym $m+w workspace $ws5
+    bindsym $m+e workspace $ws6
+    bindsym $m+a workspace $ws7
+    bindsym $m+s workspace $ws8
+    bindsym $m+d workspace $ws9
+
+    bindsym $m+Mod1+1 move container to workspace $ws1
+    bindsym $m+Mod1+2 move container to workspace $ws2
+    bindsym $m+Mod1+3 move container to workspace $ws3
+    bindsym $m+Mod1+q move container to workspace $ws4
+    bindsym $m+Mod1+w move container to workspace $ws5
+    bindsym $m+Mod1+e move container to workspace $ws6
+    bindsym $m+Mod1+a move container to workspace $ws7
+    bindsym $m+Mod1+s move container to workspace $ws8
+    bindsym $m+Mod1+d move container to workspace $ws9
+
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+    bindsym $m+c   mode "default"
+}
+
+bindsym $m+r mode "$rearr"
+set $rearr rearr
+mode "$rearr"
+{
+    bindsym Up    resize shrink height 5 px or 5 ppt
+    bindsym Down  resize grow   height 5 px or 5 ppt
+    bindsym Left  resize shrink width  5 px or 5 ppt
+    bindsym Right resize grow   width  5 px or 5 ppt
+
+    bindsym k resize shrink height 5 px or 5 ppt
+    bindsym j resize grow   height 5 px or 5 ppt
+    bindsym h resize shrink width  5 px or 5 ppt
+    bindsym l resize grow   width  5 px or 5 ppt
+
+    bindsym Shift+Up    resize shrink height 2 px or 2 ppt
+    bindsym Shift+Down  resize grow   height 2 px or 2 ppt
+    bindsym Shift+Left  resize shrink width  2 px or 2 ppt
+    bindsym Shift+Right resize grow   width  2 px or 2 ppt
+
+    bindsym Shift+k resize shrink height 2 px or 2 ppt
+    bindsym Shift+j resize grow   height 2 px or 2 ppt
+    bindsym Shift+h resize shrink width  2 px or 2 ppt
+    bindsym Shift+l resize grow   width  2 px or 2 ppt
+
+    bindsym $m+Left  focus left
+    bindsym $m+Down  focus down
+    bindsym $m+Up    focus up
+    bindsym $m+Right focus right
+
+    bindsym $m+h focus left
+    bindsym $m+j focus down
+    bindsym $m+k focus up
+    bindsym $m+l focus right
+
+    bindsym $m+Mod1+Left  move left  33 px
+    bindsym $m+Mod1+Down  move down  33 px
+    bindsym $m+Mod1+Up    move up    33 px
+    bindsym $m+Mod1+Right move right 33 px
+
+    bindsym $m+Mod1+h move left  33 px
+    bindsym $m+Mod1+j move down  33 px
+    bindsym $m+Mod1+k move up    33 px
+    bindsym $m+Mod1+l move right 33 px
+
+    bindsym $m+z split h
+    bindsym $m+x split v
+
+    bindsym $m+1 workspace $ws1
+    bindsym $m+2 workspace $ws2
+    bindsym $m+3 workspace $ws3
+    bindsym $m+q workspace $ws4
+    bindsym $m+w workspace $ws5
+    bindsym $m+e workspace $ws6
+    bindsym $m+a workspace $ws7
+    bindsym $m+s workspace $ws8
+    bindsym $m+d workspace $ws9
+
+    bindsym $m+Mod1+1 move container to workspace $ws1
+    bindsym $m+Mod1+2 move container to workspace $ws2
+    bindsym $m+Mod1+3 move container to workspace $ws3
+    bindsym $m+Mod1+q move container to workspace $ws4
+    bindsym $m+Mod1+w move container to workspace $ws5
+    bindsym $m+Mod1+e move container to workspace $ws6
+    bindsym $m+Mod1+a move container to workspace $ws7
+    bindsym $m+Mod1+s move container to workspace $ws8
+    bindsym $m+Mod1+d move container to workspace $ws9
+
+    bindsym $m+Shift+space floating toggle
+    bindsym $m+space focus mode_toggle
+
+    bindsym $m+Shift+q kill
+    
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+    bindsym $m+r   mode "default"
+}
+
+bindsym $m+Shift+e mode "$exit"
+set $exit e: xit | s: hutdown | r: eboot | esc ret: cancel
+mode "$exit"
+{
+    bindsym e $exc mpc pause; $exc i3-msg exit, mode "default"
+    bindsym s $exc mpc pause; $exc shutdown -h now
+    bindsym r $exc mpc pause; $exc reboot
+
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+}
+
+# == style ==
+
+font pango:tewi, kotchi gothic 9
+
+set $yellow  #E1D838
+set $pink    #F6557E
+set $green   #40BB7A
+set $dkgrey  #262626
+set $ltgrey  #696969
+set $mdgrey  #393939
+
+#                        border   bg       text     indictr  child_border
+client.focused           #333333  $green   #ffffff  $green   $green
+client.focused_inactive  #333333  $ltgrey  #ffffff  $ltgrey  $ltgrey
+client.unfocused         #333333  $dkgrey  #ffffff  $dkgrey  $mdgrey
+client.urgent            #333333  $pink    #ffffff  $pink    $pink
+client.placeholder       #333333  $dkgrey  #ffffff  $dkgrey  $dkgrey
+client.background        $dkgrey
+
+bar
+{
+    status_command i3status -c ~/.i3/statusconfig
+    position top
+    strip_workspace_numbers yes
+    tray_output none
+
+    bindsym button3 $exc $dmenu
+    bindsym button4 nop
+    bindsym button5 nop
+
+    colors
+    {
+        background  $dkgrey
+        separator   $ltgrey
+        statusline  $pink
+        
+        #                   border   bg       text
+        focused_workspace   $pink    $pink    $dkgrey
+        active_workspace    $dkgrey  $dkgrey  $ltgrey
+        inactive_workspace  $dkgrey  $dkgrey  $ltgrey
+        urgent_workspace    $green   $green   $dkgrey
+    }
+
+    separator_symbol "❤"
+}

@@ -1,0 +1,69 @@
+general {
+    output_format = "i3bar"
+    colors = true
+    interval = 3
+
+    color_good="#40BB7A"
+    color_bad="#dddddd"
+}
+
+order += "mpd"
+order += "tztime local"
+order += "battery 0"
+order += "volume master"
+## order += "disk /"
+order += "wireless _first_"
+
+wireless _first_ {
+    # format_up = "W: (%quality at %essid, %bitrate) %ip"
+    ## format_up = "%essid %quality"
+    ## format_down = "internot"
+    format_up = "conn"
+    format_down = "xxxx"
+    color_bad = "#dddd66"
+}
+
+battery 0 {
+    # format = "%status %percentage %remaining %emptytime"
+    format = "%percentage%status"
+    format_down = "no battery"
+    status_chr  = "c"
+    status_bat  = "b"
+    status_full = "f"
+    path = "/sys/class/power_supply/BAT%d/uevent"
+    low_threshold = 21
+    integer_battery_capacity = true
+    last_full_capacity = true
+}
+
+tztime local {
+     format = "%l.%M.%S\\(%p"
+}
+
+disk "/" {
+     format = "%free"
+}
+
+volume master {
+     format = "%volume♪"
+     format_muted = "%volumem"
+     device = "default"
+     mixer = "Master"
+     mixer_idx = 0
+}
+
+mpd {
+    separator=false       
+    align = "center"
+#   min_width = 968
+##  min_width = 888
+    min_width = 1185
+
+    color_good  = "#F6557E"
+    color_bad   = "#424242"
+
+    format_up   = "%title :: %album :: %artist"
+    format_down = " "
+    host = "127.0.0.1"
+    port = 6600
+}

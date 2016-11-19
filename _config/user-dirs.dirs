@@ -1,0 +1,8 @@
+XDG_DESKTOP_DIR="/mnt/media/desktop"
+XDG_DOWNLOAD_DIR="/mnt/media/downloads"
+XDG_TEMPLATES_DIR="/home/mel/"
+XDG_PUBLICSHARE_DIR="/home/mel/"
+XDG_DOCUMENTS_DIR="/mnt/media/documents"
+XDG_MUSIC_DIR="/mnt/media/music"
+XDG_PICTURES_DIR="/mnt/media/images"
+XDG_VIDEOS_DIR="/mnt/media/videos"
