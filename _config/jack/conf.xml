@@ -4,7 +4,7 @@ JACK settings, as persisted by D-Bus object.
 You probably don't want to edit this because
 it will be overwritten next time jackdbus saves.
 -->
-<!-- Fri Nov 18 20:08:34 2016 -->
+<!-- Tue Nov 22 14:39:14 2016 -->
 <jack>
  <engine>
   <option name="driver">alsa</option>

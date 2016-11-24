@@ -30,7 +30,7 @@ URxvt*color14 : #14c2c2
 URxvt*color7  : #d3d7cf
 URxvt*color15 : #eeeeec
 
-URxvt*font: xft:tewi:pixelsize=11,\
+URxvt*font: xft:tewi:pixelsize=10,\
             xft:Kochi Gothic:antialias=false
 
 URxvt.geometry: 90x27

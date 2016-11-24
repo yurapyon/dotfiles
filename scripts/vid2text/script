@@ -1,0 +1,5 @@
+#!/bin/bash
+
+for f in *.jpg; do
+	img2txt -W 120 -f tga "$f" | tee "conv/${f%.jpg}.tga"
+done

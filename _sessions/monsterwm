@@ -34,11 +34,6 @@ fi
 numlockx &
 xsetroot -cursor_name left_ptr &
 compton -CG --no-fading-openclose &
-urxvt &
-
 [ ! -s ~/.config/mpd/pid ] && mpd &> /dev/null &
 
-exec ~/documents/programming/c/windowmgrs/monsterwm/monsterwm 2>~/monsterwmerr \
-    | luajit ~/documents/programming/c/windowmgrs/lemons/lemons.lua \
-    | ~/documents/programming/c/windowmgrs/bar/lemonbar -f "tewi:pixelsize=10" -f "Kochi Gothic:pixelsize=10:antialias=false" -B "#327747" -F "#9ecb9b" -g x18
-#exec ~/documents/programming/c/windowmgrs/monsterwm/monsterwm 
+exec ~/documents/programming/c/windowmgrs/monsterwm/monsterwm > ~/monsterwmerr 

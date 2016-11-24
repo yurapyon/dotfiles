@@ -31,7 +31,7 @@
     
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
-    alignment = "center"
+    alignment = "left"
     
     # The frequency with wich text that is longer than the notification
     # window allows bounces back and forth.
@@ -42,7 +42,7 @@
     # Show age of message if message is older than show_age_threshold
     # seconds.
     # Set to -1 to disable.
-    show_age_threshold = 60
+    show_age_threshold = -1
     
     # Split notifications into multiple lines if they don't fit into
     # geometry.

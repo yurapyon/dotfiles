@@ -83,7 +83,7 @@ alias clrtmp='for i in /tmp/* ; do sudo rm -r "$i" ; done'
 alias clrcoredumps='sudo rm /var/lib/systemd/coredump/*'
 alias conn='sudo netctl start'
 alias stop='sudo netctl stop'
-alias wacomtouch='luajit ~/documents/scripts/touchoff.lua'
+alias wacomtouch='~/dotfiles/scripts/touchoff.lua'
 
 alias screenfetch+="clear && screenfetch"
 alias xresc='xrdb ~/.Xresources'
@@ -105,7 +105,7 @@ alias audio-dl='youtube-dl --no-playlist -x'
 alias video-dl='youtube-dl --no-playlist'
 alias scons='scons -Q'
 
-alias e-nvim='nvim ~/dotfiles/config/nvim/init.vim'
+alias e-nvim='nvim ~/dotfiles/_config/nvim/init.vim'
 alias e-zsh='nvim ~/dotfiles/zshrc'
 alias e-install='nvim ~/dotfiles/install-list'
 

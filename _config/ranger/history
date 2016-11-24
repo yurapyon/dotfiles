@@ -1,11 +1,3 @@
-mkdir 
-rename freq
-mkdir practice
-rename KICK33qqqqqqqqqqqqqqqqqqqqqqq.wav
-shell witch
-mkdir gundam thunderbolt
-rename Bubblegum Crisis - 1.srt
-mkdir bgc
 rename Bubblegum Crisis - 2.srt
 rename 
 open_with .
@@ -15,7 +7,6 @@ open_with q
 mkdir do you want to live forever
 Delete
 unr
-shell unrar x %s
 mkdir vimeo
 search webs
 mkdir orig
@@ -35,16 +26,25 @@ rename build
 rename modc_util.h
 rename twisty.jpg
 mkdir ds
-open_with 
 shell wc %s
 mkdir term_test
 rename .git
 mkdir five
 mkdir i
 mkdir vi
-shell 7za x %s
 mkdir src
 mkdir tests
 rename _dld
-delete
 rename for purityq
+un
+shell unrar x %s
+rename Chapter 59
+rename Chapter 60
+rename Chapter 61-1
+mkdir cv
+rename asdf
+open_with 
+open_with aaaa
+open_with nvim
+shell 7za x %s
+delete

@@ -20,7 +20,7 @@ set showcmd
 set splitbelow
 set splitright
 
-"map q: <nop>
+map q: <nop>
 nnoremap Q <nop>
 
 cmap w!! w !sudo tee > /dev/null %

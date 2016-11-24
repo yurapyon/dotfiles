@@ -36,17 +36,20 @@ wget
 screenfetch
 xclip
 neovim
+htop
 
 == X ==
 
 xorg-xinit
 xorg-server
-monsterwm
 compton
 noto-fonts 
-kotchi gothic, tewi, termsyn
+kotchi gothic
+tewi
 lxappearance
 gnome themes standard
+*monsterwm
+*lemonbar
 
 == utils ==
 
@@ -66,12 +69,6 @@ ncmpcpp
 mpv
 sxiv
 mupdf
-
-== programming ==
-
-luajit
-luarocks5.1 (brings in lua5.1)
-supercollider-git -- qt
 
 == net ==
 
