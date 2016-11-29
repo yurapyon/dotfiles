@@ -71,6 +71,9 @@ alias ls='ls --color=auto' #normal
 alias ks='ls'
 alias sl='ls'
 
+alias pls='sudo'
+alias rm='rm -i'
+
 alias update='sudo pacman -Syu'
 alias inst='sudo pacman -S'
 alias uninst='sudo pacman -Rs'
@@ -115,6 +118,9 @@ alias @ocaml='cd ~/documents/programming/ocaml'
 # alias @lualib='cd /usr/share/lua/5.1'
 
 alias -g 'xeph'='-- /usr/bin/Xephyr'
+
+alias forex_zip='rm forex.zip || true; 7za a -p"$(cat ~/.pass)" forex.zip *'
+alias forex_unzip='7za x -p"$(cat ~/.pass)" -y forex.zip '
 
 # opam
 . /home/mel/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true

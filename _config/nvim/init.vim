@@ -33,6 +33,7 @@ set fdl=3
 
 au FileType lua set cms=--%s
 au FileType c set shiftwidth=4
+au FileType cpp set shiftwidth=4
 
 " lmao nice..
 set background=dark

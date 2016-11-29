@@ -1,25 +1,3 @@
-rename Bubblegum Crisis - 2.srt
-rename 
-open_with .
-
-open_with q
-7za x
-mkdir do you want to live forever
-Delete
-unr
-mkdir vimeo
-search webs
-mkdir orig
-open_with aq
-mkdir modc
-rename old_main.c
-mkdir logs
-mkdir eating in the dark
-mkdir misc
-mkdir _bukiko
-mkdir sick new drugs
-mkdir shakes
-mkdir milkpasters
 mkdir
 rename _other
 rename build
@@ -47,4 +25,26 @@ open_with
 open_with aaaa
 open_with nvim
 shell 7za x %s
+mkdir c_utils
+nvim q
+rename std
+open_with y
+
+rename exstd
+rename stdex
+rename stdex.h
+echo 2
+! echo 4
+shell echo 6
+rename src_new
+rename new_forex_c
+rename modc
+rename FLIP FLAPPERS Episode 3 – Pure XLR-722473..ass
+rename FLIP FLAPPERS Episode 3 – Pure XLR-722473.ass
+rename FLIP FLAPPERS Episode 4 – Pure Equalization-722475.ass
+rename FLIP FLAPPERS Episode 5 – Pure Echo-722477.ass
+rename FLIP FLAPPERS Episode 6 – Pure Play-722479.ass
+rename FLIP FLAPPERS Episode 7 – Pure Component-722481.ass
+mkdir _emu
+mkdir psp
 delete
