@@ -1,18 +1,3 @@
-mkdir
-rename _other
-rename build
-rename modc_util.h
-rename twisty.jpg
-mkdir ds
-shell wc %s
-mkdir term_test
-rename .git
-mkdir five
-mkdir i
-mkdir vi
-mkdir src
-mkdir tests
-rename _dld
 rename for purityq
 un
 shell unrar x %s
@@ -29,7 +14,6 @@ mkdir c_utils
 nvim q
 rename std
 open_with y
-
 rename exstd
 rename stdex
 rename stdex.h
@@ -47,4 +31,20 @@ rename FLIP FLAPPERS Episode 6 – Pure Play-722479.ass
 rename FLIP FLAPPERS Episode 7 – Pure Component-722481.ass
 mkdir _emu
 mkdir psp
+mkdir lisp
+rename lov.c
+w
+selete
+shell 
+shell wc %s
+rename README.md
+rename komugi
+rename komugi.h
+
+mkdir idk
+rename _idk
+mkdir _wm
+shell nvim .gitignore
+rename scripts
 delete
+rename windowmgr

@@ -1,3 +1,0 @@
-#!bin/bash
-
-ffmpeg -i komugicapture%04d.png test.mp4

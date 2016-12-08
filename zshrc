@@ -13,6 +13,8 @@ setopt no_beep
 setopt append_history
 setopt inc_append_history
 
+setopt auto_pushd
+
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
@@ -67,12 +69,12 @@ del-prompt-accept-line() {
 zle -N del-prompt-accept-line
 bindkey "^M" del-prompt-accept-line
 
-alias ls='ls --color=auto' #normal
+alias ls='ls --color=auto'
 alias ks='ls'
 alias sl='ls'
 
 alias pls='sudo'
-alias rm='rm -i'
+alias rm='rm -I'
 
 alias update='sudo pacman -Syu'
 alias inst='sudo pacman -S'
@@ -89,7 +91,7 @@ alias clrram='sudo zsh -c "free && sync && echo 3 > /proc/sys/vm/drop_caches && 
 alias clrtmp='for i in /tmp/* ; do sudo rm -r "$i" ; done'
 alias clrcoredumps='sudo rm /var/lib/systemd/coredump/*'
 
-alias wacomtouch='~/dotfiles/scripts/touchoff.lua'
+alias wacomtouch='~/dotfiles/_scripts/touchoff.lua'
 alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
 alias xresc='xrdb ~/.Xresources'
@@ -99,7 +101,7 @@ alias -g luarocks='luarocks-5.1'
 
 alias sxiv='sxiv -a'
 alias sxiva='(sxiv -r * &)'
-alias umpv='~/documents/scripts/umpv.py' 
+alias umpv='~/dotfiles/_wm/scripts/umpv.py' 
 alias audio-dl='youtube-dl --no-playlist -x'
 alias video-dl='youtube-dl --no-playlist'
 alias scons='scons -Q'
@@ -110,8 +112,8 @@ alias e-install='nvim ~/dotfiles/install-list'
 
 alias sx1='startx ~/dotfiles/_sessions/monsterwm'
 
+alias @wm='cd ~/dotfiles/_wm'
 alias @myelo='cd ~/documents/programming/c/myelocyte/src'
-alias @wm='cd ~/documents/programming/c/windowmgrs'
 alias @uo='cd ~/documents/programming/c/uokichi'
 alias @ocaml='cd ~/documents/programming/ocaml'
 # alias @lua='cd ~/documents/programming/lua'

@@ -24,6 +24,8 @@ map q: <nop>
 nnoremap Q <nop>
 
 cmap w!! w !sudo tee > /dev/null %
+"cmap we w|e
+"cmap wb w|b
 
 map <F2> :set rnu!<CR>
 noremap <F3> :call system('scons -Q')<CR>
