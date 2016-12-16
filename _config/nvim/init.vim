@@ -4,7 +4,6 @@ set expandtab
 set shiftwidth=2
 set number
 set ruler
-syntax on
 set wrap
 set linebreak
 set nolist
@@ -16,6 +15,8 @@ set smartindent
 set autoindent
 set showcmd
 
+syntax on
+
 " splits
 set splitbelow
 set splitright
@@ -23,17 +24,29 @@ set splitright
 map q: <nop>
 nnoremap Q <nop>
 
-cmap w!! w !sudo tee > /dev/null %
-"cmap we w|e
-"cmap wb w|b
+map <F7> vi(
+map <F8> <ESC>:sil '<,'>:w !luajit -e 'require("socket").udp():sendto(io.read("*a"), "127.0.0.1", 33333)'<CR>
+
+cmap W! w !sudo tee > /dev/null %
 
 map <F2> :set rnu!<CR>
-noremap <F3> :call system('scons -Q')<CR>
+" noremap <F3> :call system('scons -Q')<CR>
+
+let matched = 0
+function! Match81()
+  if g:matched
+    call matchdelete(g:matched)
+    let g:matched = 0
+  else
+    let g:matched = matchadd('Color81', '\%>80v.\+', 100)
+  endif
+endf
+map <F5> :call Match81()<CR> 
 
 set fdm=marker
 set fdl=3
 
-au FileType lua set cms=--%s
+"au FileType lua set cms=--%s
 au FileType c set shiftwidth=4
 au FileType cpp set shiftwidth=4
 
@@ -60,7 +73,8 @@ hi Error      ctermfg=White    ctermbg=Red
 hi Todo       ctermfg=Yellow   ctermbg=None cterm=bold 
 hi Delimiter  ctermfg=Gray
 
-"hi LineNr               ctermfg=DarkGray             cterm=bold 
+hi Color81    ctermfg=Black    ctermbg=Red  cterm=bold
+
 hi LineNr               ctermfg=Grey                 cterm=bold 
 hi CursorLineNr         ctermfg=Green  ctermbg=Black cterm=bold
 hi cUserFunction        ctermfg=White
@@ -86,10 +100,6 @@ hi link Tag            Special
 hi link SpecialChar    Special
 hi link SpecialComment Special
 hi link Debug          Special
-
-"autocmd vimenter * NERDTree
-"set omnifunc=syntaxcomplete#Complete
-"filetype plugin on
 
 "let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
 "execute "set rtp+=" . g:opamshare . "/merlin/vim"

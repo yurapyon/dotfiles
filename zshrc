@@ -69,17 +69,23 @@ del-prompt-accept-line() {
 zle -N del-prompt-accept-line
 bindkey "^M" del-prompt-accept-line
 
+alias rm='rm -I'
 alias ls='ls --color=auto'
 alias ks='ls'
 alias sl='ls'
+alias cldirs='dirs ""'
 
 alias pls='sudo'
-alias rm='rm -I'
+alias r='ranger'
+alias am='alsamixer'
+alias j='rlwrap ~/dotfiles/_wm/lemons/jack_ctl.lua'
+alias lj='luajit'
+
+alias coffee='systemd-inhibit --what=handle-lid-switch cat'
 
 alias update='sudo pacman -Syu'
 alias inst='sudo pacman -S'
 alias uninst='sudo pacman -Rs'
-# pacman -Rsn $(pacman -Qdtq) delete all loose makedepends
 
 alias mnt='sudo mount'
 alias umnt='sudo umount'
@@ -91,13 +97,15 @@ alias clrram='sudo zsh -c "free && sync && echo 3 > /proc/sys/vm/drop_caches && 
 alias clrtmp='for i in /tmp/* ; do sudo rm -r "$i" ; done'
 alias clrcoredumps='sudo rm /var/lib/systemd/coredump/*'
 
-alias wacomtouch='~/dotfiles/_scripts/touchoff.lua'
+alias touch-off='~/dotfiles/lemons/touchoff.lua'
 alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+alias csound-server='~/documents/programming/csound/server.csd'
 
 alias xresc='xrdb ~/.Xresources'
 alias xresc+='xrdb ~/.Xresources && urxvt'
 
 alias -g luarocks='luarocks-5.1'
+alias luajit='rlwrap luajit'
 
 alias sxiv='sxiv -a'
 alias sxiva='(sxiv -r * &)'
@@ -114,10 +122,8 @@ alias sx1='startx ~/dotfiles/_sessions/monsterwm'
 
 alias @wm='cd ~/dotfiles/_wm'
 alias @myelo='cd ~/documents/programming/c/myelocyte/src'
-alias @uo='cd ~/documents/programming/c/uokichi'
-alias @ocaml='cd ~/documents/programming/ocaml'
-# alias @lua='cd ~/documents/programming/lua'
-# alias @lualib='cd /usr/share/lua/5.1'
+alias @csound='cd ~/documents/programming/csound'
+alias @laura='cd ~/documents/programming/c/laura-rola'
 
 alias -g 'xeph'='-- /usr/bin/Xephyr'
 
