@@ -1,35 +1,84 @@
+" TODO
+"    move colors out of here
+"    ctrl-h in terminal
+"    pathogen to something else?
+"    add more things todo like lowercase todo, note, etc
+"    figure out the right way to do those mappings
+
 execute pathogen#infect()
 
+" == settings ==
+
+" ins spaces on tab
 set expandtab
+
+" tab size
 set shiftwidth=2
+set tabstop=2
+
+" line numbers
 set number
+
+" put file position in status bar
 set ruler
+
+" wrap lines
 set wrap
-set linebreak
-set nolist
 set textwidth=0
 set wrapmargin=0
-set smartcase
+
+" show tabs n spaces
+set list
+
+" delete tabs backwards
 set smarttab
+
+" smart indent on { and }
 set smartindent
+
+" copy last indent
 set autoindent
+
+" show unfinished command in status bar
 set showcmd
 
-syntax on
+" allow to move cursor anywhere in indent mode
+set virtualedit=insert
 
 " splits
 set splitbelow
 set splitright
 
+" folds
+set fdm=marker
+set fdl=3
+
+" searching
+set ignorecase
+set smartcase
+
+" extra lines around cursor
+set scrolloff=4
+
+" dont show status bar
+set laststatus=0
+
+" == mappings ==
+
+" haha
+noremap ; :
+" noremap : ;
+
 map q: <nop>
 nnoremap Q <nop>
 
-map <F7> vi(
-map <F8> <ESC>:sil '<,'>:w !luajit -e 'require("socket").udp():sendto(io.read("*a"), "127.0.0.1", 33333)'<CR>
+map <Enter> o<Esc>
 
 cmap W! w !sudo tee > /dev/null %
 
-map <F2> :set rnu!<CR>
+" sudo save
+" command! W :execute ':silent w !sudo tee % > /dev/null' | :edit!
+
 " noremap <F3> :call system('scons -Q')<CR>
 
 let matched = 0
@@ -41,16 +90,24 @@ function! Match81()
     let g:matched = matchadd('Color81', '\%>80v.\+', 100)
   endif
 endf
-map <F5> :call Match81()<CR> 
 
-set fdm=marker
-set fdl=3
+let mapleader="\<Space>"
+map <Leader>( vi(
+map <Leader>p <ESC>:sil '<,'>:w !luajit -e 'require("socket").udp():sendto(io.read("*a"), "127.0.0.1", 33333)'<CR>
+map <Leader>m :call Match81()<CR>
+map <Leader>r :set rnu!<CR>
 
-"au FileType lua set cms=--%s
-au FileType c set shiftwidth=4
+" == filetypes ==
+
+let g:c_syntax_for_h = 1
+au FileType c   set shiftwidth=4
 au FileType cpp set shiftwidth=4
 
+" == colors lol ==
+
 " lmao nice..
+syntax on
+
 set background=dark
 hi clear
 if exists("syntax_on")
@@ -59,8 +116,8 @@ endif
 
 "hi Normal     ctermfg=Black
 hi Comment    ctermfg=Gray
-hi Constant   ctermfg=Magenta     
-hi Special    ctermfg=DarkMagenta 
+hi Constant   ctermfg=Magenta
+hi Special    ctermfg=DarkMagenta
 hi Identifier ctermfg=Cyan                  cterm=bold
 hi Statement  ctermfg=Green
 hi PreProc    ctermfg=Blue
@@ -70,12 +127,12 @@ hi Repeat     ctermfg=White
 hi Operator   ctermfg=Magenta
 hi Ignore     ctermfg=Black
 hi Error      ctermfg=White    ctermbg=Red
-hi Todo       ctermfg=Yellow   ctermbg=None cterm=bold 
+hi Todo       ctermfg=Yellow   ctermbg=None cterm=bold
 hi Delimiter  ctermfg=Gray
 
 hi Color81    ctermfg=Black    ctermbg=Red  cterm=bold
 
-hi LineNr               ctermfg=Grey                 cterm=bold 
+hi LineNr               ctermfg=Grey                 cterm=bold
 hi CursorLineNr         ctermfg=Green  ctermbg=Black cterm=bold
 hi cUserFunction        ctermfg=White
 hi cUserFunctionPointer ctermfg=White

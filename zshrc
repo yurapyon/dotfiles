@@ -73,13 +73,13 @@ alias rm='rm -I'
 alias ls='ls --color=auto'
 alias ks='ls'
 alias sl='ls'
-alias cldirs='dirs ""'
 
-alias pls='sudo'
+alias j='rlwrap ~/dotfiles/_wm/lemons/jack_ctl.lua'
+alias c='rlwrap ~/dotfiles/_wm/lemons/calc.lua'
 alias r='ranger'
 alias am='alsamixer'
-alias j='rlwrap ~/dotfiles/_wm/lemons/jack_ctl.lua'
 alias lj='luajit'
+alias mpcp='mpc playlist'
 
 alias coffee='systemd-inhibit --what=handle-lid-switch cat'
 
@@ -129,6 +129,11 @@ alias -g 'xeph'='-- /usr/bin/Xephyr'
 
 alias forex_zip='rm forex.zip || true; 7za a -p"$(cat ~/.pass)" forex.zip *'
 alias forex_unzip='7za x -p"$(cat ~/.pass)" -y forex.zip '
+
+# mkdir+cd
+function md() {
+	mkdir -p "$1" && cd "$1"
+}
 
 # opam
 . /home/mel/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true

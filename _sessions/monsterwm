@@ -36,4 +36,4 @@ xsetroot -cursor_name left_ptr &
 compton -CG --no-fading-openclose &
 [ ! -s ~/.config/mpd/pid ] && mpd &> /dev/null &
 
-exec ~/dotfiles/_wm/monsterwm/monsterwm > ~/monsterwmerr 
+exec ~/dotfiles/_wm/monsterwm/monsterwm 1> ~/.mwmout 2> ~/.mwmerr 

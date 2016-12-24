@@ -1,16 +1,3 @@
-rename stdex
-rename stdex.h
-echo 2
-! echo 4
-shell echo 6
-rename src_new
-rename new_forex_c
-rename modc
-rename FLIP FLAPPERS Episode 3 – Pure XLR-722473..ass
-rename FLIP FLAPPERS Episode 3 – Pure XLR-722473.ass
-rename FLIP FLAPPERS Episode 4 – Pure Equalization-722475.ass
-rename FLIP FLAPPERS Episode 5 – Pure Echo-722477.ass
-rename FLIP FLAPPERS Episode 6 – Pure Play-722479.ass
 rename FLIP FLAPPERS Episode 7 – Pure Component-722481.ass
 mkdir _emu
 mkdir psp
@@ -32,7 +19,6 @@ rename scripts
 rename windowmgr
 bg-fill 
 rename Lylah-Splash-900x450.png
-delete
 mkdir momobako
 mkdir foodman
 mkdir 2006
@@ -48,3 +34,17 @@ rename bell.wav
 rename did-you-have-brain-tumor.aiff
 rename did-you-have-brain-tumor.aif
 rename _luajit
+cd /usr/local/share
+mkdir kak
+rename lucius2k -c.kak
+cd .wine
+search ms
+search msp
+mkdir ghostly guava
+nvim lala2.c
+shell nvim lala2.c
+rename nitoria.c
+rename nitoria.h
+delete
+shell 7az x %s
+shell 7za x %s
