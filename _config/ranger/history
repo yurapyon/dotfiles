@@ -1,50 +1,50 @@
-rename FLIP FLAPPERS Episode 7 – Pure Component-722481.ass
-mkdir _emu
-mkdir psp
-mkdir lisp
-rename lov.c
-w
-selete
-shell 
-shell wc %s
-rename README.md
-rename komugi
-rename komugi.h
-
-mkdir idk
-rename _idk
-mkdir _wm
-shell nvim .gitignore
-rename scripts
-rename windowmgr
-bg-fill 
-rename Lylah-Splash-900x450.png
-mkdir momobako
-mkdir foodman
-mkdir 2006
-rename toyota sienna
-mkdir _moetann
-rename ALMONDS EP 2
-rename onehundred% DRINK
-rename ninesevenALMONDS EP 2
-rename NEKOPHILIAC point-sugar-click
-mkdir _yakui
-mkdir goreshit
-rename bell.wav
-rename did-you-have-brain-tumor.aiff
-rename did-you-have-brain-tumor.aif
-rename _luajit
-cd /usr/local/share
-mkdir kak
-rename lucius2k -c.kak
-cd .wine
-search ms
-search msp
-mkdir ghostly guava
-nvim lala2.c
-shell nvim lala2.c
-rename nitoria.c
-rename nitoria.h
+mkdr sums
+mkdir sums
+rename sumda.elf
+rename sum.arms
+rename FLIP FLAPPERS Episode 8 – Pure Breaker-722483.ass
+rename FLIP FLAPPERS Episode 9 – Pure Mute-722485.ass
+rename FLIP FLAPPERS Episode 10 – Pure Jitter-722487.ass
+rename FLIP FLAPPERS Episode 11 – Pure Storage-722489.ass
+rename FLIP FLAPPERS Episode 12 – Pure Howling-722491.ass
+search turn
+808.c
+shell nvim 808.c
+search yeo
+mkdir a
+mkdir water
+search audio
+rename arch linux
+search WP
+search core
+search ser
+search pins_aya
+search pins
 delete
-shell 7az x %s
+mkdir
+nvim serial.h
+rename chalkboard.jpg
+search kuw
+bg-fill 
+cd anime
+rename alien-nine.jpg
+shell gimp %s
+set preview_images!
+set preview_images=on
+search 
+set preq
+set preview imager
+
+set preview_images=onhk
+set preview_images_method=urxvt
+set line_numbers
+set line_numbers=absolute
+set line_numbers!
+set line_numbers off
+set line_numbers node
+set line_numbers false
+search k
+open_with firefox
+search nand
+mkdir nand
 shell 7za x %s

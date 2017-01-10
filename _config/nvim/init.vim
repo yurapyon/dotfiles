@@ -42,16 +42,16 @@ set autoindent
 " show unfinished command in status bar
 set showcmd
 
-" allow to move cursor anywhere in indent mode
-set virtualedit=insert
+" allow to move cursor anywhere in insert mode
+" set virtualedit=insert
 
 " splits
 set splitbelow
 set splitright
 
 " folds
-set fdm=marker
-set fdl=3
+set foldmethod=marker
+set foldlevel=3
 
 " searching
 set ignorecase
@@ -61,7 +61,7 @@ set smartcase
 set scrolloff=4
 
 " dont show status bar
-set laststatus=0
+" set laststatus=0
 
 " == mappings ==
 
@@ -70,18 +70,18 @@ noremap ; :
 " noremap : ;
 
 map q: <nop>
-nnoremap Q <nop>
+map Q  <nop>
+
+nmap <Left>  <nop>
+nmap <Right> <nop>
+nmap <Up>    <nop>
+nmap <Down>  <nop>
 
 map <Enter> o<Esc>
 
 cmap W! w !sudo tee > /dev/null %
 
-" sudo save
-" command! W :execute ':silent w !sudo tee % > /dev/null' | :edit!
-
-" noremap <F3> :call system('scons -Q')<CR>
-
-let matched = 0
+let g:matched = 0
 function! Match81()
   if g:matched
     call matchdelete(g:matched)
@@ -96,46 +96,64 @@ map <Leader>( vi(
 map <Leader>p <ESC>:sil '<,'>:w !luajit -e 'require("socket").udp():sendto(io.read("*a"), "127.0.0.1", 33333)'<CR>
 map <Leader>m :call Match81()<CR>
 map <Leader>r :set rnu!<CR>
+map <Leader><CR> :noh<CR>
+
+map <F9> :source $MYVIMRC<CR>
+map <F10> :vsp $MYVIMRC<CR>
+
+map <C-H> <C-W>h
+map <C-J> <C-W>j
+map <C-K> <C-W>k
+map <C-L> <C-W>l
+
+imap <C-H> <Left>
+imap <C-J> <Down>
+imap <C-K> <Up>
+imap <C-L> <Right>
+
+map <C-A> <ESC>0ggvG$
 
 " == filetypes ==
 
 let g:c_syntax_for_h = 1
-au FileType c   set shiftwidth=4
+au FileType c set shiftwidth=4
 au FileType cpp set shiftwidth=4
 
 " == colors lol ==
 
 " lmao nice..
 syntax on
+syntax reset
 
 set background=dark
 hi clear
-if exists("syntax_on")
-  syntax reset
-endif
 
-"hi Normal     ctermfg=Black
-hi Comment    ctermfg=Gray
-hi Constant   ctermfg=Magenta
-hi Special    ctermfg=DarkMagenta
-hi Identifier ctermfg=Cyan                  cterm=bold
-hi Statement  ctermfg=Green
-hi PreProc    ctermfg=Blue
-hi Type       ctermfg=Green
-hi Function   ctermfg=Magenta               cterm=bold
-hi Repeat     ctermfg=White
-hi Operator   ctermfg=Magenta
-hi Ignore     ctermfg=Black
-hi Error      ctermfg=White    ctermbg=Red
-hi Todo       ctermfg=Yellow   ctermbg=None cterm=bold
-hi Delimiter  ctermfg=Gray
+" hi Normal     ctermfg=black
+hi Comment    ctermfg=gray
+hi Constant   ctermfg=magenta
+hi Special    ctermfg=darkmagenta
+hi Identifier ctermfg=cyan                  cterm=bold
+hi Statement  ctermfg=green
+hi PreProc    ctermfg=blue
+hi Type       ctermfg=green
+hi Function   ctermfg=magenta               cterm=bold
+hi Repeat     ctermfg=white
+hi Operator   ctermfg=magenta
+hi Ignore     ctermfg=black
+hi Error      ctermfg=white    ctermbg=red
+hi Todo       ctermfg=yellow   ctermbg=none cterm=bold
+hi Delimiter  ctermfg=gray
 
-hi Color81    ctermfg=Black    ctermbg=Red  cterm=bold
+hi StatusLine   ctermfg=black   ctermbg=white
+hi StatusLineNC ctermfg=magenta ctermbg=white
+hi VertSplit    ctermfg=magenta ctermbg=white
 
-hi LineNr               ctermfg=Grey                 cterm=bold
-hi CursorLineNr         ctermfg=Green  ctermbg=Black cterm=bold
-hi cUserFunction        ctermfg=White
-hi cUserFunctionPointer ctermfg=White
+hi Color81 ctermfg=black ctermbg=red  cterm=bold
+
+hi LineNr               ctermfg=grey                 cterm=bold
+hi CursorLineNr         ctermfg=green  ctermbg=black cterm=bold
+hi cUserFunction        ctermfg=white
+hi cUserFunctionPointer ctermfg=white
 
 hi link String         Constant
 hi link Character      Constant

@@ -4,3 +4,4 @@ export ALSA_CARD=Generic_1
 export XDG_CONFIG_HOME=~/.config
 export VST_PATH=~/.vst
 export URHO3D_PREFIX_PATH=/usr/share/Urho3D/Resources
+export _JAVA_AWT_WM_NONREPARENTING=1
