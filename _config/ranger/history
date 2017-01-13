@@ -1,50 +1,6 @@
-mkdr sums
-mkdir sums
-rename sumda.elf
-rename sum.arms
-rename FLIP FLAPPERS Episode 8 – Pure Breaker-722483.ass
-rename FLIP FLAPPERS Episode 9 – Pure Mute-722485.ass
-rename FLIP FLAPPERS Episode 10 – Pure Jitter-722487.ass
-rename FLIP FLAPPERS Episode 11 – Pure Storage-722489.ass
-rename FLIP FLAPPERS Episode 12 – Pure Howling-722491.ass
-search turn
-808.c
-shell nvim 808.c
-search yeo
-mkdir a
-mkdir water
-search audio
-rename arch linux
-search WP
-search core
-search ser
-search pins_aya
-search pins
-delete
-mkdir
-nvim serial.h
-rename chalkboard.jpg
-search kuw
-bg-fill 
-cd anime
-rename alien-nine.jpg
-shell gimp %s
-set preview_images!
-set preview_images=on
-search 
-set preq
-set preview imager
+rename manga
+mkdir dld
+open_with 
 
-set preview_images=onhk
-set preview_images_method=urxvt
-set line_numbers
-set line_numbers=absolute
-set line_numbers!
-set line_numbers off
-set line_numbers node
-set line_numbers false
-search k
-open_with firefox
-search nand
-mkdir nand
-shell 7za x %s
+delete
+rename Vstinst

@@ -63,6 +63,8 @@ set scrolloff=4
 " dont show status bar
 " set laststatus=0
 
+set nobackup
+
 " == mappings ==
 
 " haha

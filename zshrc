@@ -77,10 +77,10 @@ bindkey "^M" del-prompt-accept-line
 
 # defaults
 alias rm='rm -I'
-alias ls='ls --color=auto'
+# alias ls='ls --color=auto'
 alias top='htop'
-alias mnt='sudo mount'
-alias umnt='sudo umount'
+alias mount='sudo mount'
+alias umount='sudo umount'
 alias sxiv='sxiv -a'
 alias sxiva='sxiv -r *'
 alias scons='scons -Q'
@@ -88,6 +88,8 @@ alias luajit='rlwrap luajit'
 alias audio-dl='youtube-dl --no-playlist -x'
 alias video-dl='youtube-dl --no-playlist'
 alias -g luarocks='luarocks-5.1'
+
+alias ls="~/documents/programming/_dld/lsc/lsc -g"
 
 # pacman
 alias inst='sudo pacman -S'
