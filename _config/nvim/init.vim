@@ -18,6 +18,7 @@ set tabstop=2
 
 " line numbers
 set number
+set numberwidth=3
 
 " put file position in status bar
 set ruler
@@ -45,6 +46,9 @@ set showcmd
 " allow to move cursor anywhere in insert mode
 " set virtualedit=insert
 
+" live updates
+set inccommand=split
+
 " splits
 set splitbelow
 set splitright
@@ -71,6 +75,9 @@ set nobackup
 noremap ; :
 " noremap : ;
 
+" comments
+inoremap # X<BS>#
+
 map q: <nop>
 map Q  <nop>
 
@@ -78,6 +85,14 @@ nmap <Left>  <nop>
 nmap <Right> <nop>
 nmap <Up>    <nop>
 nmap <Down>  <nop>
+
+imap <LeftMouse> <nop>
+imap <2-LeftMouse> <nop>
+imap <3-LeftMouse> <nop>
+imap <4-LeftMouse> <nop>
+imap <LeftDrag> <nop>
+
+nnoremap C cc<Esc>
 
 map <Enter> o<Esc>
 
@@ -94,11 +109,18 @@ function! Match81()
 endf
 
 let mapleader="\<Space>"
-map <Leader>( vi(
+"map <Leader>( vi(
 map <Leader>p <ESC>:sil '<,'>:w !luajit -e 'require("socket").udp():sendto(io.read("*a"), "127.0.0.1", 33333)'<CR>
 map <Leader>m :call Match81()<CR>
 map <Leader>r :set rnu!<CR>
 map <Leader><CR> :noh<CR>
+
+au FileType lua let b:comment_leader = '-- '
+au FileType c,cpp let b:comment_leader = '// '
+au FileType crystal,ruby let b:comment_leader = '# '
+au FileType scheme let b:comment_leader = '; '
+noremap <silent> <Leader>c :<C-B>sil <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:noh<CR>
+noremap <silent> <Leader>u :<C-B>sil <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:noh<CR>
 
 map <F9> :source $MYVIMRC<CR>
 map <F10> :vsp $MYVIMRC<CR>
@@ -145,6 +167,7 @@ hi Ignore     ctermfg=black
 hi Error      ctermfg=white    ctermbg=red
 hi Todo       ctermfg=yellow   ctermbg=none cterm=bold
 hi Delimiter  ctermfg=gray
+hi Search     ctermfg=black ctermbg=darkblue cterm=bold
 
 hi StatusLine   ctermfg=black   ctermbg=white
 hi StatusLineNC ctermfg=magenta ctermbg=white
@@ -178,5 +201,9 @@ hi link SpecialChar    Special
 hi link SpecialComment Special
 hi link Debug          Special
 
-"let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-"execute "set rtp+=" . g:opamshare . "/merlin/vim"
+syntax keyword todo todo xxx fixme note
+hi link todo Todo
+
+"au FileType scheme syntax match schemeTodo /\<\(note\|todo\|fixme\|xxx\)\>/
+au FileType scheme hi link schemeTodo Todo
+au FileType scheme syn clear schemeError

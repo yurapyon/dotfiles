@@ -1,0 +1,17 @@
+#!/bin/sh
+
+xrdb -merge $HOME/.Xresources
+xmodmap $HOME/.Xmodmap
+
+for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
+  [ -x "$f" ] && . "$f"
+done
+unset f
+
+~/.fehbg &
+numlockx &
+xsetroot -cursor_name left_ptr &
+compton -CG --no-fading-openclose &
+[ ! -s ~/.config/mpd/pid ] && mpd &> /dev/null &
+
+exec openbox

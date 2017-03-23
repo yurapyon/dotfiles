@@ -85,6 +85,8 @@ alias sxiv='sxiv -a'
 alias sxiva='sxiv -r *'
 alias scons='scons -Q'
 alias luajit='rlwrap luajit'
+alias chibi='rlwrap chibi-scheme'
+alias scheme='rlwrap scheme --eedisable'
 alias audio-dl='youtube-dl --no-playlist -x'
 alias video-dl='youtube-dl --no-playlist'
 alias -g luarocks='luarocks-5.1'
@@ -100,18 +102,23 @@ alias update='sudo pacman -Syu'
 alias sx1='startx ~/dotfiles/_sessions/monsterwm'
 alias conn='sudo netctl start'
 alias stop='sudo netctl stop'
+alias reconn='sudo netctl stop-all; sudo netctl start'
 
-# clear
+# sys
 alias clrram='sudo zsh -c "free && sync && echo 3 > /proc/sys/vm/drop_caches && free"'
 alias clrtmp='for i in /tmp/* ; do sudo rm -r "$i" ; done'
 alias clrcoredumps='sudo rm /var/lib/systemd/coredump/*'
+alias hddsleep='sudo hdparm -Y /dev/sda'
+alias split='(urxvt &)'
 
 # my scripts
 alias j='rlwrap ~/dotfiles/_wm/lemons/jack_ctl.lua'
-alias c='rlwrap ~/dotfiles/_wm/lemons/calc.lua'
+alias calc='rlwrap ~/dotfiles/_wm/lemons/calc.lua'
+alias sleep='rlwrap ~/dotfiles/_wm/lemons/timer.lua'
 alias touch-off='~/dotfiles/lemons/touchoff.lua'
 alias csound-server='~/documents/programming/csound/server.csd'
 alias love2d-server='love ~/documents/programming/lua/videos/cc_server'
+alias 2048='scheme --script ~/documents/programming/scheme/term/main.scm'
 
 # other scripts
 alias umpv='~/dotfiles/_wm/scripts/umpv.py'
@@ -132,9 +139,12 @@ alias e-zsh='nvim ~/dotfiles/zshrc'
 
 # goto
 alias @wm='cd ~/dotfiles/_wm'
+alias @uo='cd ~/documents/programming/c/uokichi/src'
 alias @myelo='cd ~/documents/programming/c/myelocyte/src'
-alias @laura='cd ~/documents/programming/c/laura-rola'
-alias @csound='cd ~/documents/programming/csound'
+alias @soreil='cd ~/documents/programming/scheme/soreil/src'
+
+# alias @laura='cd ~/documents/programming/c/laura-rola'
+# alias @csound='cd ~/documents/programming/csound'
 
 # laziness
 alias r='ranger'
@@ -143,13 +153,34 @@ alias ks='ls'
 alias sl='ls'
 alias lj='luajit'
 alias mpcp='mpc playlist'
-alias platformio='pio'
 
 # == functions ==
 
 # mkdir and cd
 function md() {
   mkdir -p "$1" && cd "$1"
+}
+
+cats() {
+  export _CATS=$(readlink -f $1)
+  if [[ -d "$_CATS" ]]; then
+    ls "$_CATS";
+  elif [[ -f "$_CATS" ]]; then
+    cat "$_CATS";
+  else echo "Could not cat or ls $1"
+  fi
+}
+# alias ls='cats'
+# alias cat='cats'
+
+function nc-wait() {
+  sudo ip addr add 192.168.10.10/16 dev enp1s0f1
+  nc -l -q 1 -p 33333 | tar xvz
+}
+
+function nc-send() {
+  sudo ip addr add 192.168.10.12/16 dev enp5s0
+  tar cvz "$1" | nc -q 1 192.168.10.10 33333
 }
 
 # opam
