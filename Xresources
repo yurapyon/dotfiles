@@ -32,8 +32,5 @@ URxvt*color15: #eeeeec
 
 URxvt*font: xft:lucy tewi:pixelsize=10, \
             xft:Kochi Gothic:antialias=false
-!URxvt*font: xft:Noto Mono:size=9, \
-!            xft:Kochi Gothic:antialias=false:pixelsize=9
-!URxvt*font: xft:Kochi Gothic:style=normal:size=12
 
 URxvt.geometry: 90x27
