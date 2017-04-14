@@ -1,64 +1,51 @@
 ;; ~/.csirc
 ;; vim: ft=scheme
 
-(use utils)
-
-(define (format-id format . args)
-  (string->symbol (apply sprintf format args)))
-
-(define-syntax property
-  (ir-macro-transformer
-    (lambda (e i c)
-      (let ( (name (cadr e))
-             (at  (caddr e)) )
-        `(begin
-          (define (,name obj) (vector-ref obj ,at))
-          (define (,(format-id "~a!" (i name)) obj to) (vector-set! obj ,at to)))
-        ))))
-
-#|
-(define-syntax make-record-type
-  (ir-macro-transformer
-    (lambda (e i c)
-      (case (length (cdr e))
-        ((2) ;; default constructor and destructor
-          (let* ( (name (cadr e))
-                  (flds (caddr e))
-                  (field-names
-                    (map cadr flds)) )
-            `(begin
-              ,(append
-                `(define (,name ,@field-names)
-                   (make-record-instance ',(i name) ,@field-names))
-                (map
-                  (lambda (at field)
-                    (if (c (car feild) 'mut)
-                        `(property ,(format-id "~a.~a" (i name) (i (cadr field))) at)
-                        `(getter
-          )
-        )
-        ;; ((3) ;; custom constructor
-        ;; )
-        ;; ((4) ;; custom construcor and destructor
-        ;; )
-        ))))
-
-(make-record-type test ((mut x) (immut y))
-  (constructor
-    (case-lambda
-      (() '(1 2 3))
-      ((x y) `(,x ,y 10))))
-  (destructor
-    (lambda (t) (free (test.x t))))
-  )
-
-(define (test x y)
-|#
+(use extras readline matchable)
 
 (define (dnL . args)
   (for-each (lambda (x) (display x) (display " ")) args)
   (newline))
 
-(define aref  vector-ref)
-(define alen  vector-length)
-(define aset! vector-set!)
+(define (show-banner)
+  (dnL #<<BANNER
+        "`-"-.
+              "-.
+  /"._       ,-""
+  ;/`-`-.   "\'
+  \           ;
+ -.    ._   _./
+ ' \   "@' /@;'_,
+    "`._   \,".
+    .-',"`-'   `
+      '
+BANNER
+))
+
+(toplevel-command 'clear
+  (lambda () (system "clear") (show-banner))
+  ",clear            clear screen")
+
+;;
+
+(current-input-port (make-readline-port))
+(install-history-file #f "/.scheme_history")
+(parse-and-bind "set editing-mode vi")
+
+(repl-prompt
+  (lambda ()
+    " > "))
+
+(repl-secondary-prompt
+  (lambda (p)
+    (let ( (len (string-length p)) )
+      (case len
+        ((0) "")
+        ((1) ".")
+        ((2) ". ")
+        ((3) ".. ")
+        (else
+          (conc "..." (make-string (- len 3) #\space)))
+        ))))
+
+(show-banner)

@@ -76,15 +76,13 @@ bindkey "^M" del-prompt-accept-line
 # defaults
 alias rm='rm -I'
 alias top='htop'
+alias csi='csi -q'
 alias sxiv='sxiv -a'
-alias csi='rlwrap csi'
 alias scons='scons -Q'
 alias split='(urxvt &)'
 alias mount='sudo mount'
 alias umount='sudo umount'
 alias luajit='rlwrap luajit'
-alias scheme='rlwrap scheme --eedisable'
-alias guile='rlwrap guile'
 alias audio-dl='youtube-dl --no-playlist -x'
 alias video-dl='youtube-dl --no-playlist'
 alias ls="~/documents/programming/_dld/lsc/lsc -g"
@@ -131,6 +129,7 @@ alias @uo='cd ~/documents/programming/c/uokichi/src'
 alias @soreil='cd ~/documents/programming/mixed/soreil/src'
 
 # laziness
+alias e='nvim'
 alias r='ranger'
 alias am='alsamixer'
 alias ks='ls'

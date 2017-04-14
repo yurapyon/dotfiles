@@ -146,6 +146,7 @@ au FileType cpp set shiftwidth=4
 " == colors lol ==
 
 " lmao nice..
+let is_chicken = 1
 syntax on
 syntax reset
 
@@ -204,6 +205,6 @@ hi link Debug          Special
 syntax keyword todo todo xxx fixme note
 hi link todo Todo
 
-"au FileType scheme syntax match schemeTodo /\<\(note\|todo\|fixme\|xxx\)\>/
+" au FileType scheme syntax keyword schemeTodo todo xxx fixme note
 au FileType scheme hi link schemeTodo Todo
 au FileType scheme syn clear schemeError
