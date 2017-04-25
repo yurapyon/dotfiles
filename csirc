@@ -1,7 +1,9 @@
 ;; ~/.csirc
 ;; vim: ft=scheme
 
-(use extras readline matchable)
+(use
+  extras
+  readline)
 
 (define (dnL . args)
   (for-each (lambda (x) (display x) (display " ")) args)
@@ -25,6 +27,10 @@ BANNER
 (toplevel-command 'clear
   (lambda () (system "clear") (show-banner))
   ",clear            clear screen")
+
+(toplevel-command 'ldoc
+  (lambda () (use chicken-doc))
+  ",ldoc             load documentation")
 
 ;;
 

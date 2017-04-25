@@ -30,6 +30,7 @@ set wrapmargin=0
 
 " show tabs n spaces
 set list
+set listchars=tab:_\ ,trail:-,
 
 " delete tabs backwards
 set smarttab
@@ -47,7 +48,7 @@ set showcmd
 " set virtualedit=insert
 
 " live updates
-set inccommand=split
+" set inccommand=split
 
 " splits
 set splitbelow

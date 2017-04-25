@@ -55,17 +55,15 @@ bindkey '^N'   down-line-or-search
 bindkey '^[Oc' forward-word
 bindkey '^[Od' backward-word
 
+# == prompt ==
+
 export PROMPT="%(?.oo%)/.%B%{%F{red}%}%?%)/%{%f%}%b) %B%{%F{black}%}>%{%f%}%b %{%F{green}%}%2~%{%f%} %B%{%F{black}%}>%{%f%}%b "
-export RPROMPT="%{%F{magenta}%}sh$SHLVL%{%f%}"
 
 del-prompt-accept-line() {
   OLDPROMPT="$PROMPT"
-  OLDRPROMPT="$RPROMPT"
   PROMPT="%(?.ooooooooo%)/.%B%{%F{red}%}%?%)/%{%f%}%b) %B%{%F{black}%}>%{%f%}%b %{%F{green}%}%d%{%f%} %B%{%F{black}%}>%{%f%}%b "
-  RPROMPT="%{%F{green}%}$(date +"%I %M %S")%{%f%}"
   zle reset-prompt
   PROMPT="$OLDPROMPT"
-  RPROMPT="$OLDRPROMPT"
   zle accept-line
 }
 zle -N del-prompt-accept-line
@@ -76,67 +74,70 @@ bindkey "^M" del-prompt-accept-line
 # defaults
 alias rm='rm -I'
 alias top='htop'
+alias ls='lsc -g'
 alias csi='csi -q'
 alias sxiv='sxiv -a'
-alias scons='scons -Q'
-alias split='(urxvt &)'
-alias mount='sudo mount'
-alias umount='sudo umount'
 alias luajit='rlwrap luajit'
-alias audio-dl='youtube-dl --no-playlist -x'
 alias video-dl='youtube-dl --no-playlist'
-alias ls="~/documents/programming/_dld/lsc/lsc -g"
+alias audio-dl='youtube-dl --no-playlist -x'
+alias chicken-install='sudo chicken-install'
 
 # pacman
 alias inst='sudo pacman -S'
 alias uninst='sudo pacman -Rs'
 alias update='sudo pacman -Syu'
 
-# login
+# X
 alias sx1='startx ~/dotfiles/_sessions/monsterwm'
-alias conn='sudo netctl stop-all; sudo netctl start'
-alias stop='sudo netctl stop'
+alias split='(urxvt &)'
+alias -g 'xeph'='-- /usr/bin/Xephyr' # make sure to follow with a display number
+alias xresc='xrdb ~/.Xresources'
 
 # sys
+alias mount='sudo mount'
+alias umount='sudo umount'
+alias hddsleep='sudo hdparm -Y'
+alias coffee='systemd-inhibit --what=handle-lid-switch cat'
+alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+alias conn='sudo netctl stop-all; sudo netctl start'
+alias stop='sudo netctl stop'
 alias clrram='sudo zsh -c "free && sync && echo 3 > /proc/sys/vm/drop_caches && free"'
 alias clrtmp='for i in /tmp/* ; do sudo rm -r "$i" ; done'
 alias clrcoredumps='sudo rm /var/lib/systemd/coredump/*'
-alias hddsleep='sudo hdparm -Y /dev/sda'
 
-# my scripts
+# scripts
 alias j='rlwrap ~/dotfiles/_wm/lemons/jack_ctl.lua'
-alias calc='rlwrap ~/dotfiles/_wm/lemons/calc.lua'
 alias sleep='rlwrap ~/dotfiles/_wm/lemons/timer.lua'
 alias touch-off='~/dotfiles/lemons/touchoff.lua'
-
-# other scripts
 alias umpv='~/dotfiles/_wm/scripts/umpv.py'
 
-# oneliners
-alias xresc='xrdb ~/.Xresources'
-alias coffee='systemd-inhibit --what=handle-lid-switch cat'
+# shh
 alias forex_zip='rm forex.zip || true; 7za a -p"$(cat ~/.pass)" forex.zip *'
 alias forex_unzip='7za x -p"$(cat ~/.pass)" -y forex.zip '
-alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
-alias -g 'xeph'='-- /usr/bin/Xephyr' # make sure to follow with a display number
-
-# edit
-alias e-zsh='nvim ~/dotfiles/zshrc'
 
 # goto
 alias @wm='cd ~/dotfiles/_wm'
-alias @uo='cd ~/documents/programming/c/uokichi/src'
 alias @soreil='cd ~/documents/programming/mixed/soreil/src'
 
 # laziness
-alias e='nvim'
-alias r='ranger'
-alias am='alsamixer'
 alias ks='ls'
 alias sl='ls'
-alias lj='luajit'
+alias r='ranger'
+alias e='nvim'
+alias am='alsamixer'
 
 # == functions ==
+
+# nnn cd on quit
+export NNN_TMPFILE="/tmp/nnn"
+
+n() {
+  nnn
+  if [ -f $NNN_TMPFILE ]; then
+    . $NNN_TMPFILE
+    rm $NNN_TMPFILE
+  fi
+}
 
 # mkdir and cd
 function md() {
