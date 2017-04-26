@@ -130,7 +130,6 @@ alias am='alsamixer'
 
 # nnn cd on quit
 export NNN_TMPFILE="/tmp/nnn"
-
 n() {
   nnn
   if [ -f $NNN_TMPFILE ]; then
@@ -153,8 +152,6 @@ cats() {
   else echo "Could not cat or ls $1"
   fi
 }
-# alias ls='cats'
-# alias cat='cats'
 
 function nc-wait() {
   sudo ip addr add 192.168.10.10/16 dev enp1s0f1

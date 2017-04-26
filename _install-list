@@ -43,7 +43,7 @@ htop
 xorg-xinit
 xorg-server
 compton
-noto-fonts 
+noto-fonts
 kotchi gothic
 tewi
 lxappearance
@@ -64,8 +64,8 @@ gdmap
 == media ==
 
 mpd
-mpc 
-ncmpcpp 
+mpc
+ncmpcpp
 mpv
 sxiv
 mupdf
@@ -85,13 +85,13 @@ renoise
   > audio permissions
     sudo usermod -aG audio
     /etc/security/limits.conf
-     @audio - rtprio 99 
-     @audio - nice −10 
+     @audio - rtprio 99
+     @audio - nice −10
   > mpg123
 
 == audio ==
 
-jack2-dbus 
+jack2-dbus
  + dbus-python
 qjackctl (make sure qjackctl is set to dbus mode)
 alsa-plugins

@@ -1,5 +1,4 @@
 ;; ~/.csirc
-;; vim: ft=scheme
 
 (use
   extras
@@ -55,3 +54,5 @@ BANNER
         ))))
 
 (show-banner)
+
+;; vim: ft=scheme

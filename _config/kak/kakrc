@@ -1,1 +1,0 @@
-hook global WinCreate .* %{addhl number_lines -separator ": "}
