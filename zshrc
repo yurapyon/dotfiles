@@ -57,11 +57,11 @@ bindkey '^[Od' backward-word
 
 # == prompt ==
 
-export PROMPT="%(?.oo%)/.%B%{%F{red}%}%?%)/%{%f%}%b) %B%{%F{black}%}>%{%f%}%b %{%F{green}%}%2~%{%f%} %B%{%F{black}%}>%{%f%}%b "
+export PROMPT="%(?.oo%)/.%B%{%F{red}%}%?%)/%{%f%}%b) %B%{%F{black}%}>%{%f%}%b %{%F{magenta}%}%2~%{%f%} %B%{%F{black}%}>%{%f%}%b "
 
 del-prompt-accept-line() {
   OLDPROMPT="$PROMPT"
-  PROMPT="%(?.ooooooooo%)/.%B%{%F{red}%}%?%)/%{%f%}%b) %B%{%F{black}%}>%{%f%}%b %{%F{green}%}%d%{%f%} %B%{%F{black}%}>%{%f%}%b "
+  PROMPT="%(?.ooooooooo%)/.%B%{%F{red}%}%?%)/%{%f%}%b) %B%{%F{black}%}>%{%f%}%b %{%F{magenta}%}%d%{%f%} %B%{%F{black}%}>%{%f%}%b "
   zle reset-prompt
   PROMPT="$OLDPROMPT"
   zle accept-line
@@ -162,3 +162,6 @@ function nc-send() {
   sudo ip addr add 192.168.10.12/16 dev enp5s0
   tar cvz "$1" | nc -q 1 192.168.10.10 33333
 }
+
+# OPAM configuration
+. /home/mel/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true

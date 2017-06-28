@@ -50,6 +50,9 @@ set showcmd
 " live updates
 " set inccommand=split
 
+" use mouse
+set mouse=a
+
 " splits
 set splitbelow
 set splitright
@@ -111,7 +114,9 @@ endf
 
 let mapleader="\<Space>"
 "map <Leader>( vi(
-map <Leader>p <ESC>:sil '<,'>:w !luajit -e 'require("socket").udp():sendto(io.read("*a"), "127.0.0.1", 33333)'<CR>
+"map <Leader>p <ESC>:sil '<,'>:w !luajit -e 'require("socket").udp():sendto(io.read("*a"), "127.0.0.1", 33333)'<CR>
+map <Leader>p <ESC>:sil '<,'>:w !luajit -e 'require("luasend").send(io.read("*a"))'<CR>
+map <Leader>a <ESC>:sil :w !luajit -e 'require("luasend").send(io.read("*a"))'<CR>
 map <Leader>m :call Match81()<CR>
 map <Leader>r :set rnu!<CR>
 map <Leader><CR> :noh<CR>

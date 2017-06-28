@@ -1,14 +1,18 @@
 URxvt.termName: rxvt-256color
 URxvt.depth: 32
-URxvt.background: rgba:1111/0000/1111/9999
+URxvt.background: rgba:0000/0011/0011/9999
 URxvt.foreground: #eeeeee
 URxvt.scrollBar: false
 URxvt.geometry: 90x27
 
 !!==
 
-URxvt*font: xft:lucy tewi:pixelsize=10, \
-            xft:Kochi Gothic:antialias=false
+! URxvt*font: xft:lucy tewi:pixelsize=10, \
+!           xft:Kochi Gothic:antialias=false
+
+URxvt.letterSpace: -1
+URxvt*font: xft:Noto Mono:size=9, \
+            xft:Kochi Gothic
 
 ! black
 URxvt*color0:  #080808
