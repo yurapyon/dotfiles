@@ -55,6 +55,9 @@ bindkey '^N'   down-line-or-search
 bindkey '^[Oc' forward-word
 bindkey '^[Od' backward-word
 
+bindkey '^[[1;5C' forward-word
+bindkey '^[[1;5D' backward-word
+
 # == prompt ==
 
 export PROMPT="%(?.oo%)/.%B%{%F{red}%}%?%)/%{%f%}%b) %B%{%F{black}%}>%{%f%}%b %{%F{magenta}%}%2~%{%f%} %B%{%F{black}%}>%{%f%}%b "
@@ -87,10 +90,12 @@ alias inst='sudo pacman -S'
 alias uninst='sudo pacman -Rs'
 alias update='sudo pacman -Syu'
 
-# X
+# X11
 alias sx1='startx ~/dotfiles/_sessions/monsterwm'
+alias sx2='startx ~/dotfiles/_sessions/dwm'
+alias sx3='startx ~/dotfiles/_sessions/openbox'
 alias split='(urxvt &)'
-alias -g 'xeph'='-- /usr/bin/Xephyr' # make sure to follow with a display number
+alias -g 'xeph'='-- /usr/bin/Xephyr :3' # make sure to follow with a display number
 alias xresc='xrdb ~/.Xresources'
 
 # sys
@@ -126,17 +131,11 @@ alias r='ranger'
 alias e='nvim'
 alias am='alsamixer'
 
-# == functions ==
+#
 
-# nnn cd on quit
-export NNN_TMPFILE="/tmp/nnn"
-n() {
-  nnn
-  if [ -f $NNN_TMPFILE ]; then
-    . $NNN_TMPFILE
-    rm $NNN_TMPFILE
-  fi
-}
+alias batt='cat /sys/class/power_supply/BAT1/capacity'
+
+# == functions ==
 
 # mkdir and cd
 function md() {

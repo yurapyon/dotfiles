@@ -24,7 +24,7 @@ set numberwidth=3
 set ruler
 
 " wrap lines
-set wrap
+set nowrap
 set textwidth=0
 set wrapmargin=0
 
@@ -50,6 +50,9 @@ set showcmd
 " live updates
 " set inccommand=split
 
+" better redraw
+set lazyredraw
+
 " use mouse
 set mouse=a
 
@@ -71,6 +74,7 @@ set scrolloff=4
 " dont show status bar
 " set laststatus=0
 
+"
 set nobackup
 
 " == mappings ==
