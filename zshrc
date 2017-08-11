@@ -62,22 +62,22 @@ bindkey '^[[1;5D' backward-word
 
 export PROMPT="%(?.oo%)/.%B%{%F{red}%}%?%)/%{%f%}%b) %B%{%F{black}%}>%{%f%}%b %{%F{magenta}%}%2~%{%f%} %B%{%F{black}%}>%{%f%}%b "
 
-del-prompt-accept-line() {
-  OLDPROMPT="$PROMPT"
-  PROMPT="%(?.ooooooooo%)/.%B%{%F{red}%}%?%)/%{%f%}%b) %B%{%F{black}%}>%{%f%}%b %{%F{magenta}%}%d%{%f%} %B%{%F{black}%}>%{%f%}%b "
-  zle reset-prompt
-  PROMPT="$OLDPROMPT"
-  zle accept-line
-}
-zle -N del-prompt-accept-line
-bindkey "^M" del-prompt-accept-line
+# del-prompt-accept-line() {
+  # OLDPROMPT="$PROMPT"
+  # PROMPT="%(?.ooooooooo%)/.%B%{%F{red}%}%?%)/%{%f%}%b) %B%{%F{black}%}>%{%f%}%b %{%F{magenta}%}%d%{%f%} %B%{%F{black}%}>%{%f%}%b "
+  # zle reset-prompt
+  # PROMPT="$OLDPROMPT"
+  # zle accept-line
+# }
+# zle -N del-prompt-accept-line
+# bindkey "^M" del-prompt-accept-line
 
 # == aliases ==
 
 # defaults
 alias rm='rm -I'
 alias top='htop'
-alias ls='lsc -g'
+alias ls='pwd; lsc -g'
 alias csi='csi -q'
 alias sxiv='sxiv -a'
 alias luajit='rlwrap luajit'
@@ -131,8 +131,9 @@ alias r='ranger'
 alias e='nvim'
 alias am='alsamixer'
 
-#
+# lalala
 
+alias mpcclip='mpc -f "%artist% %title%" | head -1 | xclip -i -selection clipboard'
 alias batt='cat /sys/class/power_supply/BAT1/capacity'
 
 # == functions ==

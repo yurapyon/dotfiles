@@ -1,6 +1,5 @@
 " TODO
 "    move colors out of here
-"    ctrl-h in terminal
 "    pathogen to something else?
 "    add more things todo like lowercase todo, note, etc
 "    figure out the right way to do those mappings
@@ -94,6 +93,12 @@ nmap <Right> <nop>
 nmap <Up>    <nop>
 nmap <Down>  <nop>
 
+"map <LeftMouse> <nop>
+"map <2-LeftMouse> <nop>
+"map <3-LeftMouse> <nop>
+"map <4-LeftMouse> <nop>
+"map <LeftDrag> <nop>
+
 imap <LeftMouse> <nop>
 imap <2-LeftMouse> <nop>
 imap <3-LeftMouse> <nop>
@@ -120,7 +125,8 @@ let mapleader="\<Space>"
 "map <Leader>( vi(
 "map <Leader>p <ESC>:sil '<,'>:w !luajit -e 'require("socket").udp():sendto(io.read("*a"), "127.0.0.1", 33333)'<CR>
 map <Leader>p <ESC>:sil '<,'>:w !luajit -e 'require("luasend").send(io.read("*a"))'<CR>
-map <Leader>a <ESC>:sil :w !luajit -e 'require("luasend").send(io.read("*a"))'<CR>
+map <Leader>x <ESC>:sil :w !luajit -e 'require("luasend").send(io.read("*a"))'<CR>
+map <Leader>a <ESC>:sil :w !scmsend<CR>
 map <Leader>m :call Match81()<CR>
 map <Leader>r :set rnu!<CR>
 map <Leader><CR> :noh<CR>
@@ -145,8 +151,6 @@ imap <C-J> <Down>
 imap <C-K> <Up>
 imap <C-L> <Right>
 
-map <C-A> <ESC>0ggvG$
-
 " == filetypes ==
 
 let g:c_syntax_for_h = 1
@@ -159,6 +163,7 @@ au FileType cpp set shiftwidth=4
 let is_chicken = 1
 syntax on
 syntax reset
+syntax sync fromstart
 
 set background=dark
 hi clear
