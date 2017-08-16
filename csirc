@@ -1,25 +1,17 @@
-;; ~/.csirc
+; ~/.csirc
 
 (use
   extras
-  readline)
+  )
 
 (define (dnL . args)
-  (for-each (lambda (x) (display x) (display " ")) args)
+  (display (string-intersperse (map ->string args)))
   (newline))
 
 (define (show-banner)
   (dnL #<<BANNER
-        "`-"-.
-              "-.
-  /"._       ,-""
-  ;/`-`-.   "\'
-  \           ;
- -.    ._   _./
- ' \   "@' /@;'_,
-    "`._   \,".
-    .-',"`-'   `
-      '
+/|_|o/|/|_|\|/_/|_||_|v||_
+\| ||\|\|_| | /\| ||_| ||_
 BANNER
 ))
 
@@ -31,28 +23,6 @@ BANNER
   (lambda () (use chicken-doc))
   ",ldoc             load documentation")
 
-;;
-
-(current-input-port (make-readline-port))
-(install-history-file #f "/.scheme_history")
-(parse-and-bind "set editing-mode vi")
-
-(repl-prompt
-  (lambda ()
-    " > "))
-
-(repl-secondary-prompt
-  (lambda (p)
-    (let ( (len (string-length p)) )
-      (case len
-        ((0) "")
-        ((1) ".")
-        ((2) ". ")
-        ((3) ".. ")
-        (else
-          (conc "..." (make-string (- len 3) #\space)))
-        ))))
-
 (show-banner)
 
-;; vim: ft=scheme
+; vim: ft=scheme

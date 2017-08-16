@@ -62,25 +62,14 @@ bindkey '^[[1;5D' backward-word
 
 export PROMPT="%(?.oo%)/.%B%{%F{red}%}%?%)/%{%f%}%b) %B%{%F{black}%}>%{%f%}%b %{%F{magenta}%}%2~%{%f%} %B%{%F{black}%}>%{%f%}%b "
 
-# del-prompt-accept-line() {
-  # OLDPROMPT="$PROMPT"
-  # PROMPT="%(?.ooooooooo%)/.%B%{%F{red}%}%?%)/%{%f%}%b) %B%{%F{black}%}>%{%f%}%b %{%F{magenta}%}%d%{%f%} %B%{%F{black}%}>%{%f%}%b "
-  # zle reset-prompt
-  # PROMPT="$OLDPROMPT"
-  # zle accept-line
-# }
-# zle -N del-prompt-accept-line
-# bindkey "^M" del-prompt-accept-line
-
 # == aliases ==
 
 # defaults
 alias rm='rm -I'
 alias top='htop'
-alias ls='pwd; lsc -g'
-alias csi='csi -q'
+alias ls='echo -en "\e[7m\e[32m\e[1m"; pwd; echo -en "\e[0m"; lsc -g'
+alias csi='rlwrap csi -q'
 alias sxiv='sxiv -a'
-alias luajit='rlwrap luajit'
 alias video-dl='youtube-dl --no-playlist'
 alias audio-dl='youtube-dl --no-playlist -x'
 alias chicken-install='sudo chicken-install'
@@ -92,8 +81,7 @@ alias update='sudo pacman -Syu'
 
 # X11
 alias sx1='startx ~/dotfiles/_sessions/monsterwm'
-alias sx2='startx ~/dotfiles/_sessions/dwm'
-alias sx3='startx ~/dotfiles/_sessions/openbox'
+alias sx2='startx ~/dotfiles/_sessions/openbox'
 alias split='(urxvt &)'
 alias -g 'xeph'='-- /usr/bin/Xephyr :3' # make sure to follow with a display number
 alias xresc='xrdb ~/.Xresources'
@@ -111,9 +99,6 @@ alias clrtmp='for i in /tmp/* ; do sudo rm -r "$i" ; done'
 alias clrcoredumps='sudo rm /var/lib/systemd/coredump/*'
 
 # scripts
-alias j='rlwrap ~/dotfiles/_wm/lemons/jack_ctl.lua'
-alias sleep='rlwrap ~/dotfiles/_wm/lemons/timer.lua'
-alias touch-off='~/dotfiles/lemons/touchoff.lua'
 alias umpv='~/dotfiles/_wm/scripts/umpv.py'
 
 # shh
@@ -122,13 +107,13 @@ alias forex_unzip='7za x -p"$(cat ~/.pass)" -y forex.zip '
 
 # goto
 alias @wm='cd ~/dotfiles/_wm'
-alias @soreil='cd ~/documents/programming/mixed/soreil/src'
+alias @miri='cd ~/documents/programming/scheme/miri7/src'
+alias @hive='cd ~/documents/programming/hive/desktop/src'
 
 # laziness
 alias ks='ls'
 alias sl='ls'
 alias r='ranger'
-alias e='nvim'
 alias am='alsamixer'
 
 # lalala
@@ -149,7 +134,7 @@ cats() {
     ls "$_CATS";
   elif [[ -f "$_CATS" ]]; then
     cat "$_CATS";
-  else echo "Could not cat or ls $1"
+  else echo "couldnt cats $1"
   fi
 }
 
@@ -162,6 +147,3 @@ function nc-send() {
   sudo ip addr add 192.168.10.12/16 dev enp5s0
   tar cvz "$1" | nc -q 1 192.168.10.10 33333
 }
-
-# OPAM configuration
-. /home/mel/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true

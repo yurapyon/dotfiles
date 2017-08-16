@@ -8,20 +8,8 @@ URxvt.geometry: 90x27
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 
-!!==
-
-! URxvt*font: xft:lucy tewi:pixelsize=10, \
-!         xft:Kochi Gothic:antialias=false
-
-! URxvt*font: xft:gohufont:pixelsize=14, \
-!  xft:Kochi Gothic:size=10:antialias=false
-
 URxvt*font: -*-gohufont-medium-*-*-*-14-*-*-*-*-*-*-*, \
             xft:Kochi Gothic:antialias=false
-
-! URxvt.letterSpace: -1
-! URxvt*font: xft:Noto Mono:size=10:antialias=true, \
-!           xft:Kochi Gothic
 
 ! black
 URxvt*color0:  #080808
