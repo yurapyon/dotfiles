@@ -29,7 +29,7 @@ setopt inc_append_history
 
 setopt auto_pushd
 
-SAVEHIST=100
+SAVEHIST=250
 HISTFILE=~/.zsh_history
 
 # == keys ==
@@ -72,7 +72,9 @@ alias csi='rlwrap csi -q'
 alias sxiv='sxiv -a'
 alias video-dl='youtube-dl --no-playlist'
 alias audio-dl='youtube-dl --no-playlist -x'
-alias chicken-install='sudo chicken-install'
+alias egginst='sudo chicken-install'
+alias egguninst='sudo chicken-uninstall'
+alias miri7='miri7 -:a30'
 
 # pacman
 alias inst='sudo pacman -S'
@@ -94,7 +96,7 @@ alias coffee='systemd-inhibit --what=handle-lid-switch cat'
 alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias conn='sudo netctl stop-all; sudo netctl start'
 alias stop='sudo netctl stop'
-alias clrram='sudo zsh -c "free && sync && echo 3 > /proc/sys/vm/drop_caches && free"'
+alias clrram='sudo zsh -c "free -h && sync && echo 3 > /proc/sys/vm/drop_caches && free -h"'
 alias clrtmp='for i in /tmp/* ; do sudo rm -r "$i" ; done'
 alias clrcoredumps='sudo rm /var/lib/systemd/coredump/*'
 
@@ -108,7 +110,6 @@ alias forex_unzip='7za x -p"$(cat ~/.pass)" -y forex.zip '
 # goto
 alias @wm='cd ~/dotfiles/_wm'
 alias @miri='cd ~/documents/programming/scheme/miri7/src'
-alias @hive='cd ~/documents/programming/hive/desktop/src'
 
 # laziness
 alias ks='ls'
@@ -123,19 +124,14 @@ alias batt='cat /sys/class/power_supply/BAT1/capacity'
 
 # == functions ==
 
+function screen-timeout() {
+  xset -dpms
+  xset s $1
+}
+
 # mkdir and cd
 function md() {
   mkdir -p "$1" && cd "$1"
-}
-
-cats() {
-  export _CATS=$(readlink -f $1)
-  if [[ -d "$_CATS" ]]; then
-    ls "$_CATS";
-  elif [[ -f "$_CATS" ]]; then
-    cat "$_CATS";
-  else echo "couldnt cats $1"
-  fi
 }
 
 function nc-wait() {

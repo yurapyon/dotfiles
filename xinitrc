@@ -1,1 +1,2 @@
 xset r rate 360 30
+export _JAVA_AWT_WM_NONREPARENTING=1

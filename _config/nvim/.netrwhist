@@ -1,10 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/etc/sysctl.d'
-let g:netrw_dirhist_2='/mnt/media/documents/programming/hive/desktop/src'
-let g:netrw_dirhist_3='/mnt/media/documents/programming/lua/robeonn'
-let g:netrw_dirhist_4='/mnt/media/documents/programming/lua/videdit'
-let g:netrw_dirhist_5='/mnt/media/documents/programming/scheme/miri7'
-let g:netrw_dirhist_6='/mnt/media/documents/programming/scheme/miri7/messy'
-let g:netrw_dirhist_7='/mnt/media/documents/programming/scheme/miri7/src/shaders'
-let g:netrw_dirhist_8='/home/mel/images'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/mnt/media/documents/programming/scheme/miri7'
+let g:netrw_dirhist_2='/mnt/media/documents/programming/scheme/miri7/src'
+let g:netrw_dirhist_3='/mnt/media/documents/programming/c/forex-cpp'
+let g:netrw_dirhist_4='/mnt/media/dotfiles/_wm/monsterwm'

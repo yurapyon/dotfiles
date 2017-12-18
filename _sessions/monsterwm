@@ -14,6 +14,7 @@ source ~/.xinitrc
 numlockx &
 xsetroot -cursor_name left_ptr &
 compton -CG --no-fading-openclose &
+~/dotfiles/_wm/lemons/citrus &
 mpd &> /dev/null &
 
 exec ~/dotfiles/_wm/monsterwm/monsterwm 1> ~/.mwmout 2> ~/.mwmerr 

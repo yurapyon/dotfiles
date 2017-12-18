@@ -129,6 +129,7 @@ map <Leader>x <ESC>:sil :w !luajit -e 'require("luasend").send(io.read("*a"))'<C
 map <Leader>a <ESC>:sil :w !scmsend<CR>
 map <Leader>m :call Match81()<CR>
 map <Leader>r :set rnu!<CR>
+map <Leader>s :syntax sync fromstart<CR>
 map <Leader><CR> :noh<CR>
 
 au FileType lua let b:comment_leader = '-- '
@@ -163,7 +164,8 @@ au FileType cpp set shiftwidth=4
 let is_chicken = 1
 syntax on
 syntax reset
-syntax sync fromstart
+
+au BufEnter * syntax sync fromstart
 
 set background=dark
 hi clear

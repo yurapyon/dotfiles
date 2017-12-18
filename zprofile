@@ -1,7 +1,6 @@
 export LANG=en_US.utf8
 export EDITOR='nvim'
 
-export PATH=$PATH:$(ruby -rubygems -e "puts Gem.user_dir")/bin
 export PATH=$PATH:'/home/mel/dotfiles/_wm/lemons'
 export XDG_CONFIG_HOME=~/.config
 
