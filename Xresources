@@ -1,44 +1,44 @@
-URxvt.termName: rxvt-256color
-URxvt.depth: 32
-URxvt.background: rgba:0000/0011/0011/9999
-URxvt.foreground: #eeeeee
-URxvt.scrollBar: false
-URxvt.geometry: 90x27
+URxvt*termName: rxvt-256color
+URxvt*depth: 32
+URxvt*background: rgba:0000/0011/0011/9999
+URxvt*foreground: #eeeeee
+URxvt*scrollBar: false
+URxvt*geometry: 90x27
 
-URxvt.iso14755: false
-URxvt.iso14755_52: false
+URxvt*iso14755: false
+URxvt*iso14755_52: false
 
 URxvt*font: -*-gohufont-medium-*-*-*-14-*-*-*-*-*-*-*, \
             xft:Kochi Gothic:antialias=false
 
 ! black
-URxvt*color0:  #080808
-URxvt*color8:  #181818
+URxvt*color8:  #3b3b3b
+URxvt*color0:  #1f1d1c
 
 ! red
-URxvt*color1:  #ed323e
-URxvt*color9:  #d91900
+URxvt*color1:  #9b3912
+URxvt*color9:  #413518
 
 ! green
-URxvt*color2:  #40bb7a
-URxvt*color10: #40bb7a
+URxvt*color10:  #4f814d
+URxvt*color2: #394a44
 
 ! yellow
-URxvt*color3:  #c9c924
-URxvt*color11: #e5e515
+URxvt*color11:  #a7a862
+URxvt*color3: #aa740d
 
 ! blue
-URxvt*color4:  #2455a4
-URxvt*color12: #729fcf
+URxvt*color12:  #516674
+URxvt*color4: #2f353c
 
 ! magenta
-URxvt*color5:  #d73e71
-URxvt*color13: #e75e91
+URxvt*color13:  #976878
+URxvt*color5: #635c50
 
 ! cyan
-URxvt*color6:  #00887a
-URxvt*color14: #14c2c2
+URxvt*color14:  #9e9683
+URxvt*color6: #9b8f68
 
 ! white
-URxvt*color7:  #d3d7cf
-URxvt*color15: #eeeeec
+URxvt*color15:  #a6a8aa
+URxvt*color7: #969799

@@ -105,7 +105,7 @@ imap <3-LeftMouse> <nop>
 imap <4-LeftMouse> <nop>
 imap <LeftDrag> <nop>
 
-nnoremap C cc<Esc>
+"nnoremap C cc<Esc>
 
 map <Enter> o<Esc>
 
@@ -130,6 +130,10 @@ map <Leader>a <ESC>:sil :w !scmsend<CR>
 map <Leader>m :call Match81()<CR>
 map <Leader>r :set rnu!<CR>
 map <Leader>s :syntax sync fromstart<CR>
+map <Leader>1 :read !rwords 1<CR>
+map <Leader>2 :read !rwords 2<CR>
+map <Leader>3 :read !rwords 3<CR>
+map <Leader>4 :read !rwords 4<CR>
 map <Leader><CR> :noh<CR>
 
 au FileType lua let b:comment_leader = '-- '

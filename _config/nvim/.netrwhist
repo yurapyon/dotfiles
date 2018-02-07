@@ -1,6 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/mnt/media/documents/programming/scheme/miri7'
-let g:netrw_dirhist_2='/mnt/media/documents/programming/scheme/miri7/src'
-let g:netrw_dirhist_3='/mnt/media/documents/programming/c/forex-cpp'
-let g:netrw_dirhist_4='/mnt/media/dotfiles/_wm/monsterwm'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/mnt/media/desktop/2 u7/prog'
+let g:netrw_dirhist_2='/mnt/media/documents/programming/c/miri7'
+let g:netrw_dirhist_3='/mnt/media/documents/programming/c/miri7/src'
