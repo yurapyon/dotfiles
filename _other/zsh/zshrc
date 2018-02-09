@@ -76,7 +76,6 @@ alias sx2='startx ~/dotfiles/_sessions/openbox'
 alias xresc='xrdb ~/.Xresources'
 alias split='(urxvt &)'
 alias coffee='systemd-inhibit --what=handle-lid-switch cat'
-alias -g 'xeph'='-- /usr/bin/Xephyr :3' # make sure to follow with a display number
 
 # sys
 alias rm='rm -I'
@@ -88,7 +87,7 @@ alias ls='echo -en "\e[7m\e[32m\e[1m"; pwd; echo -en "\e[0m"; _ls'
 alias ks='ls'
 alias sl='ls'
 
-alias r='ranger'
+#alias r='ranger'
 alias am='alsamixer'
 alias conn='sudo netctl stop-all; sudo netctl start'
 
@@ -126,7 +125,6 @@ function screen-timeout() {
   xset s $1
 }
 
-# mkdir and cd
 function md() {
   mkdir -p "$1" && cd "$1"
 }
