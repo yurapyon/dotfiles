@@ -1,7 +1,8 @@
 ; ~/.csirc
 
-(use
-  extras
+(import
+  (chicken string)
+  ; (chicken process)
   )
 
 (define (dnL . args)
@@ -15,13 +16,29 @@
 BANNER
 ))
 
+#|
 (toplevel-command 'clear
   (lambda () (system "clear") (show-banner))
   ",clear            clear screen")
 
 (toplevel-command 'ldoc
-  (lambda () (use chicken-doc))
+  (lambda () (import chicken-doc))
   ",ldoc             load documentation")
+|#
+
+(define (c->f val)
+  (+ 32 (* 9 (/ val 5.0)))
+  )
+
+(define (f->c val)
+  (/ (* 5.0 (- val 32)) 9)
+  )
+
+(define (in->cm val)
+  (* val 2.54))
+
+(define (cm->in val)
+  (/ val 2.54))
 
 (show-banner)
 

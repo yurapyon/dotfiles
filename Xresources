@@ -1,6 +1,6 @@
 URxvt*termName: rxvt-256color
 URxvt*depth: 32
-URxvt*background: rgba:0000/0011/0011/9999
+URxvt*background: rgba:0000/0011/0011/b000
 URxvt*foreground: #eeeeee
 URxvt*scrollBar: false
 URxvt*geometry: 90x27
@@ -40,5 +40,5 @@ URxvt*color14:  #9e9683
 URxvt*color6: #9b8f68
 
 ! white
-URxvt*color15:  #a6a8aa
-URxvt*color7: #969799
+!URxvt*color15:  #a6a8aa
+!URxvt*color7: #969799

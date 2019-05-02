@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/mnt/media/desktop/2 u7/prog'
-let g:netrw_dirhist_2='/mnt/media/documents/programming/c/miri7'
-let g:netrw_dirhist_3='/mnt/media/documents/programming/c/miri7/src'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/mnt/media/documents/programming/scheme/uokichi/programmer/src'
+let g:netrw_dirhist_2='/mnt/media/documents/programming/scheme/uokichi/programmer'
+let g:netrw_dirhist_3='/boot/loader/entries'
+let g:netrw_dirhist_4='/boot/loader'

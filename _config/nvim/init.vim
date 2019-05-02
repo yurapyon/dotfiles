@@ -122,10 +122,6 @@ function! Match81()
 endf
 
 let mapleader="\<Space>"
-"map <Leader>( vi(
-"map <Leader>p <ESC>:sil '<,'>:w !luajit -e 'require("socket").udp():sendto(io.read("*a"), "127.0.0.1", 33333)'<CR>
-map <Leader>p <ESC>:sil '<,'>:w !luajit -e 'require("luasend").send(io.read("*a"))'<CR>
-map <Leader>x <ESC>:sil :w !luajit -e 'require("luasend").send(io.read("*a"))'<CR>
 map <Leader>a <ESC>:sil :w !scmsend<CR>
 map <Leader>m :call Match81()<CR>
 map <Leader>r :set rnu!<CR>
@@ -136,12 +132,12 @@ map <Leader>3 :read !rwords 3<CR>
 map <Leader>4 :read !rwords 4<CR>
 map <Leader><CR> :noh<CR>
 
-au FileType lua let b:comment_leader = '-- '
 au FileType c,cpp let b:comment_leader = '// '
-au FileType crystal,ruby let b:comment_leader = '# '
-au FileType scheme let b:comment_leader = '; '
+au FileType lisp,scheme let b:comment_leader = '; '
 noremap <silent> <Leader>c :<C-B>sil <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:noh<CR>
 noremap <silent> <Leader>u :<C-B>sil <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:noh<CR>
+
+au BufEnter * set formatoptions-=cro
 
 map <F9> :source $MYVIMRC<CR>
 map <F10> :vsp $MYVIMRC<CR>

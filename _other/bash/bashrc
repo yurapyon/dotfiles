@@ -3,14 +3,18 @@
 HISTCONTROL=ignoredups
 
 exitstatus() {
-    if [[ $? == 0 ]]; then
-        echo -e "oo)/"
-    else
-        echo -e "\e[1;31m$?)/\e[0m"
-    fi
+  if [[ $? == 0 ]]; then
+    echo -e "oo)/"
+  else
+    echo -e "\e[1;31m$?)/\e[0m"
+  fi
 }
 
-PS1='$(exitstatus) \W \e[1;30m> \e[0m'
+pdir() {
+  pwd | home
+}
+
+PS1='$(exitstatus) \[\e[32m\]$(pdir) \[\e[1;30m\]> \[\e[0m\]'
 
 printcolor() {
   # standard colors
@@ -66,11 +70,12 @@ alias chicken-install='sudo chicken-install'
 alias chicken-uninstall='sudo chicken-uninstall'
 
 # goto
-alias _wm='cd ~/dotfiles/_wm'
-alias _miri='cd ~/documents/programming/c/miri7/src'
-alias _regu='cd ~/documents/programming/c/libregu/src'
-alias _hive='cd ~/documents/programming/hive/desktop/src'
-alias _smake='cd ~/documents/programming/scheme/smake'
+alias '@wm'='cd ~/dotfiles/_wm'
+alias '@miri'='cd ~/documents/programming/c/miri7/src'
+alias '@regu'='cd ~/documents/programming/c/libregu/src'
+alias '@hive'='cd ~/documents/programming/hive/desktop/src'
+alias '@smake'='cd ~/documents/programming/scheme/smake'
+alias '@orth'='cd ~/documents/programming/c/orth/src'
 
 # other
 alias sxiv='sxiv -a'

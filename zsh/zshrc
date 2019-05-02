@@ -11,8 +11,8 @@ colors
 
 # == completion ==
 
-zstyle ':completion:*' menu select
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+# zstyle ':completion:*' menu select
+# zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -25,8 +25,8 @@ setopt hist_ignore_dups
 setopt hist_find_no_dups
 
 setopt no_beep
-setopt append_history
-setopt inc_append_history
+# setopt append_history
+# setopt inc_append_history
 
 setopt auto_pushd
 
@@ -43,14 +43,14 @@ bindkey '^?'    backward-delete-char
 bindkey '^[[3~' delete-char
 
 # alt-l alt-r
-bindkey '^[^[[D' beginning-of-line
-bindkey '^[^[[C' end-of-line
+# bindkey '^[^[[D' beginning-of-line
+# bindkey '^[^[[C' end-of-line
 
 # up down
-bindkey '^[[A' up-line-or-search
-bindkey '^[[B' down-line-or-search
-bindkey '^P'   up-line-or-search
-bindkey '^N'   down-line-or-search
+# bindkey '^[[A' up-line-or-search
+# bindkey '^[[B' down-line-or-search
+# bindkey '^P'   up-line-or-search
+# bindkey '^N'   down-line-or-search
 
 # ctrl-l ctrl-r
 bindkey '^[Oc' forward-word
@@ -62,6 +62,7 @@ bindkey '^[[1;5D' backward-word
 # == prompt ==
 
 export PROMPT="%(?.oo%)/.%B%{%F{red}%}%?%)/%{%f%}%b) %B%{%F{black}%}>%{%f%}%b %{%F{magenta}%}%2~%{%f%} %B%{%F{black}%}>%{%f%}%b "
+export LS_COLORS='di=1;34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=1;34:ow=1;34'
 
 # == aliases ==
 
@@ -73,6 +74,7 @@ alias update='sudo pacman -Syu'
 # X11
 alias sx1='startx ~/dotfiles/_sessions/monsterwm'
 alias sx2='startx ~/dotfiles/_sessions/openbox'
+alias sx3='startx ~/dotfiles/_sessions/awesome'
 alias xresc='xrdb ~/.Xresources'
 alias split='(urxvt &)'
 alias coffee='systemd-inhibit --what=handle-lid-switch cat'
@@ -87,7 +89,7 @@ alias ls='echo -en "\e[7m\e[32m\e[1m"; pwd; echo -en "\e[0m"; _ls'
 alias ks='ls'
 alias sl='ls'
 
-#alias r='ranger'
+alias z='zathura'
 alias am='alsamixer'
 alias conn='sudo netctl stop-all; sudo netctl start'
 
@@ -99,24 +101,19 @@ alias clrall='clrram; clrtmp; clrcoredumps'
 alias hddsleep='sudo hdparm -Y'
 alias hds='hddsleep /dev/sdb'
 
-# chicken
-alias csi='rlwrap csi -q'
-alias chicken-install='sudo chicken-install'
-alias chicken-uninstall='sudo chicken-uninstall'
+# sbcl
+alias sbcl='rlwrap sbcl'
 
 # goto
 alias @wm='cd ~/dotfiles/_wm'
-alias @miri='cd ~/documents/programming/c/miri7/src'
-alias @regu='cd ~/documents/programming/c/libregu/src'
-alias @hive='cd ~/documents/programming/hive/desktop/src'
-alias @smake='cd ~/documents/programming/scheme/smake'
+alias @uo='cd ~/documents/programming/lisp/uokichi/src'
+alias @maru='cd ~/documents/programming/c/maru/src'
 
 # other
 alias sxiv='sxiv -a'
 alias umpv='~/dotfiles/_wm/scripts/umpv.py'
 alias youtube-dl='youtube-dl --no-playlist'
 alias mpcclip='mpc -f "%artist% %title%" | head -1 | xclip -i -selection clipboard'
-alias batt='cat /sys/class/power_supply/BAT1/capacity'
 
 # == functions ==
 
@@ -138,3 +135,7 @@ function nc-send() {
   sudo ip addr add 192.168.10.12/16 dev enp5s0
   tar cvz "$1" | nc -q 1 192.168.10.10 33333
 }
+
+# == other ==
+
+export GEM_HOME=$(ruby -e 'print Gem.user_dir')
