@@ -1,6 +1,19 @@
-keycode 135 = Super_R
+! swap brackets and parens
 keycode 18 = 9 bracketleft 9 bracketleft
 keycode 19 = 0 bracketright 0 bracketright
 keycode 34 = parenleft braceleft parenleft braceleft
 keycode 35 = parenright braceright parenright braceright
+
+! pause is insert
 keysym Pause = Insert
+
+! menu is super
+keycode 135 = Super_R
+
+! swap caps and lctl
+remove Lock = Caps_Lock
+remove Control = Control_L
+keysym Control_L = Caps_Lock
+keysym Caps_Lock = Control_L
+add Lock = Caps_Lock
+add Control = Control_L

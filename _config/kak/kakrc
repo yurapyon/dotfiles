@@ -1,0 +1,33 @@
+colorscheme mochi
+
+add-highlighter global/ regex \b(todo|note)\b 0:todo
+
+add-highlighter global/ number-lines -separator ' '
+add-highlighter global/ show-matching
+
+map global insert <a-backspace> '<esc>xHdi'
+map global insert <tab> '<a-;><gt>'
+map global insert <s-tab> '<a-;><lt>'
+
+map global normal <ret> '<a-o>j'
+map global normal D 'xHd'
+
+set global indentwidth 2
+set global ui_options ncurses_assistant=cat
+set global autocomplete prompt
+
+define-command cdrc %{
+  cd '~/.config/kak'
+}
+
+define-command vertical-split %{
+  nop %sh{
+    tmux split-window -h "kak -c $kak_session"
+  }
+}
+
+define-command horizontal-split %{
+  nop %sh{
+    tmux split-window -v "kak -c $kak_session"
+  }
+}

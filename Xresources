@@ -11,34 +11,36 @@ URxvt*iso14755_52: false
 URxvt*font: -*-gohufont-medium-*-*-*-14-*-*-*-*-*-*-*, \
             xft:Kochi Gothic:antialias=false
 
+! todo fix magenta and cyan
+
 ! black
+URxvt*color0:  #101010
 URxvt*color8:  #3b3b3b
-URxvt*color0:  #1f1d1c
 
 ! red
 URxvt*color1:  #9b3912
 URxvt*color9:  #413518
 
 ! green
-URxvt*color10:  #4f814d
-URxvt*color2: #394a44
+URxvt*color2:  #394a44
+URxvt*color10: #4f814d
 
 ! yellow
-URxvt*color11:  #a7a862
-URxvt*color3: #aa740d
+URxvt*color3:  #aa740d
+URxvt*color11: #a7a862
 
 ! blue
-URxvt*color12:  #516674
-URxvt*color4: #2f353c
+URxvt*color4:  #2f353c
+URxvt*color12: #516674
 
 ! magenta
-URxvt*color13:  #976878
-URxvt*color5: #635c50
+URxvt*color5:  #635c50
+URxvt*color13: #976878
 
 ! cyan
-URxvt*color14:  #9e9683
-URxvt*color6: #9b8f68
+URxvt*color6:  #9b8f68
+URxvt*color14: #9e9683
 
 ! white
-!URxvt*color15:  #a6a8aa
-!URxvt*color7: #969799
+URxvt*color7:  #a0a0a0
+URxvt*color15: #b0b0b0
