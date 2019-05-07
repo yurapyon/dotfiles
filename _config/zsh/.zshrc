@@ -72,9 +72,9 @@ alias uninst='sudo pacman -Rs'
 alias update='sudo pacman -Syu'
 
 # X11
-alias sx1='startx ~/dotfiles/_sessions/monsterwm'
-alias sx2='startx ~/dotfiles/_sessions/stumpwm'
-alias sx3='startx ~/dotfiles/_sessions/openbox'
+alias sx1='startx ~/dotfiles/_wm/sessions/dwm'
+# alias sx2='startx ~/dotfiles/_sessions/stumpwm'
+# alias sx3='startx ~/dotfiles/_sessions/openbox'
 alias xresc='xrdb ~/.Xresources'
 alias split='(urxvt &)'
 alias coffee='systemd-inhibit --what=handle-lid-switch cat'
@@ -109,6 +109,7 @@ alias sbcl='rlwrap sbcl'
 alias @wm='cd ~/dotfiles/_wm'
 alias @uo='cd ~/documents/_programming/lisp/uokichi/src'
 alias @maru='cd ~/documents/_programming/c/maru/src'
+alias @prog='cd ~/documents/_programming/'
 
 # other
 alias sxiv='sxiv -a'

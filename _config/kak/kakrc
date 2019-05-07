@@ -16,7 +16,7 @@ set global indentwidth 2
 set global ui_options ncurses_assistant=cat
 set global autocomplete prompt
 
-define-command cdrc %{
+define-command editrc %{
   cd '~/.config/kak'
 }
 

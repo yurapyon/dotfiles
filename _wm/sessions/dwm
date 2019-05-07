@@ -14,6 +14,5 @@ source ~/.xinitrc
 numlockx &
 xsetroot -cursor_name left_ptr &
 compton -CG --no-fading-openclose &
-[ ! -s ~/.config/mpd/pid ] && mpd &> /dev/null &
 
-exec openbox
+exec dwm
