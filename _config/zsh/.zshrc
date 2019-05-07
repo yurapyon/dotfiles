@@ -73,8 +73,6 @@ alias update='sudo pacman -Syu'
 
 # X11
 alias sx1='startx ~/dotfiles/_wm/sessions/dwm'
-# alias sx2='startx ~/dotfiles/_sessions/stumpwm'
-# alias sx3='startx ~/dotfiles/_sessions/openbox'
 alias xresc='xrdb ~/.Xresources'
 alias split='(urxvt &)'
 alias coffee='systemd-inhibit --what=handle-lid-switch cat'
@@ -86,8 +84,6 @@ alias mount='sudo mount'
 alias umount='sudo umount'
 alias _ls='ls -1NLv --group-directories-first --color=always'
 alias ls='echo -en "\e[7m\e[32m\e[1m"; pwd; echo -en "\e[0m"; _ls'
-# alias ks='ls'
-# alias sl='ls'
 alias battery='cat "/sys/class/power_supply/BAT1/capacity"'
 
 alias z='zathura'
@@ -113,9 +109,10 @@ alias @prog='cd ~/documents/_programming/'
 
 # other
 alias sxiv='sxiv -a'
-alias umpv='~/dotfiles/_wm/scripts/umpv.py'
-alias youtube-dl='youtube-dl --no-playlist'
+alias ydl='youtube-dl --no-playlist'
 alias mpcclip='mpc -f "%artist% %title%" | head -1 | xclip -i -selection clipboard'
+
+alias nvim='hey'
 
 # == functions ==
 
