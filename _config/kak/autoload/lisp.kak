@@ -15,7 +15,7 @@ hook global WinSetOption filetype=lisp %{
     require-module lisp
 
     hook window InsertChar \n -group lisp-indent lisp-simple-indent
-    set-option buffer extra_word_chars ':' '<' '>' '='
+    set-option buffer extra_word_chars ':' '<' '>' '=' '&'
 
     hook -once -always window WinSetOption filetype=.* %{ remove-hooks window lisp-.+ }
 }
@@ -55,10 +55,5 @@ add-highlighter shared/lisp/code/ regex (?<=[\s()])(<|>|<=|=|>=|/=|\+|-|\*|/)(?=
 define-command -hidden lisp-simple-indent %{
     try %{ execute-keys -draft ';K<a-&>' }
 }
-
-# add-highlighter shared/lisp/code/ regex [\*\+][a-zA-Z][\w!$%&*+./:<=>?@^_~-]*[\*\+] 0:variable
-# add-highlighter shared/lisp/code/ regex (#?(['`:]|,@?))+\b[a-zA-Z][\w!$%&*+./:<=>?@^_~-]* 0:variable
-# add-highlighter shared/lisp/code/ regex (\b\d+)?\.\d+([eEsSfFdDlL]\d+)?\b 0:value
-# add-highlighter shared/lisp/code/ regex [\s]\d+[\s] 0:value
 
 }

@@ -3,7 +3,7 @@ colorscheme mochi
 add-highlighter global/ regex \b(todo|note)\b 0:todo
 
 add-highlighter global/ number-lines -separator ' '
-add-highlighter global/ show-matching
+# add-highlighter global/ show-matching
 
 map global insert <a-backspace> '<esc>xHdi'
 map global insert <tab> '<a-;><gt>'
@@ -11,6 +11,16 @@ map global insert <s-tab> '<a-;><lt>'
 
 map global normal <ret> '<a-o>j'
 map global normal D 'xHd'
+
+map global normal ( [
+map global normal [ (
+map global normal ) ]
+map global normal ] )
+
+map global normal <a-(> <a-[>
+map global normal <a-[> <a-(>
+map global normal <a-)> <a-]>
+map global normal <a-]> <a-)>
 
 map global user s ': send-text<ret>'
 

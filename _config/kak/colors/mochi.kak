@@ -10,25 +10,26 @@ face global variable   bright-blue
 face global comment    rgb:999999
 face global identifier magenta
 face global meta       bright-blue
-face global attribute  green
+face global attribute  bright-blue
 face global type       bright-green
 face global error      bright-red+br
 face global todo       bright-yellow+bf
+face global module     bright-magenta
 
 # editor
 face global Default default,default
 
 face global PrimarySelection   white,green+g
 face global SecondarySelection rgb:aaaaaa,green+g
-face global PrimaryCursor      black,bright-magenta+fg
-face global SecondaryCursor    black,rgb:aaaaaa+fg
+face global PrimaryCursor      rgb:111111,bright-green+bfg
+face global SecondaryCursor    black,rgb:aaaaaa+bfg
 face global PrimaryCursorEol   black,red+fg
 face global SecondaryCursorEol black,magenta+fg
 
 face global LineNumbers      rgb:444444+b
 face global LineNumberCursor yellow,default+b
 
-face global MatchingChar  magenta+brF
+face global MatchingChar  blue+rg
 face global BufferPadding rgb:222222
 face global Whitespace    default+f
 
