@@ -135,3 +135,13 @@ function nc-send() {
   sudo ip addr add 192.168.10.12/16 dev enp5s0
   tar cvz "$1" | nc -q 1 192.168.10.10 33333
 }
+
+function ranger-cd {
+    tempfile="$(mktemp -t tmp.XXXXXX)"
+    ranger --choosedir="$tempfile" "${@:-$(pwd)}"
+    test -f "$tempfile" &&
+    if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
+        cd -- "$(cat "$tempfile")"
+    fi
+    rm -f -- "$tempfile"
+}
