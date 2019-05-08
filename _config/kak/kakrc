@@ -13,8 +13,6 @@ map global normal <ret> '<a-o>j'
 map global normal D 'xHd'
 
 map global user s ': send-text<ret>'
-map global user p ': aplay<ret>'
-map global user <esc> ': astop<ret>'
 
 set global indentwidth 2
 set global ui_options ncurses_assistant=cat
@@ -37,18 +35,21 @@ require-module tmux-repl
 alias global vertical-cd   tmux-repl-vertical
 alias global horizontal-cd tmux-repl-horizontal
 
-define-command aplay %{
-  eval -draft -save-regs '/"|^@' %{
-    exec 's[^"()[\]{}]+<ret>'
-    nop %sh{
-      (mpc-prev.sh "$kak_selection") < /dev/null > /dev/null 2>&1 &
-    }
-  }
-}
+# define-command aplay %{
+  # eval -draft -save-regs '/"|^@' %{
+    # exec 's[^"()[\]{}]+<ret>'
+    # nop %sh{
+      # (mpc-prev.sh "$kak_selection") < /dev/null > /dev/null 2>&1 &
+    # }
+  # }
+# }
 
-define-command astop %{
-  nop %sh{ killall aplay }
-}
+# define-command astop %{
+  # nop %sh{ killall aplay }
+# }
+
+# map global user p ': aplay<ret>'
+# map global user <esc> ': astop<ret>'
 
 define-command hlcomments %{
   addhl buffer/_comm regions
