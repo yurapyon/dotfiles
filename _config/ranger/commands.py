@@ -4,19 +4,21 @@
 # documentation.  Do NOT add them all here, or you may end up with defunct
 # commands when upgrading ranger.
 
-# You always need to import ranger.api.commands here to get the Command class:
-from ranger.api.commands import *
-
 # A simple command for demonstration purposes follows.
 # -----------------------------------------------------------------------------
 
+from __future__ import (absolute_import, division, print_function)
+
 # You can import any python module as needed.
 import os
+import subprocess
+
+# You always need to import ranger.api.commands here to get the Command class:
+from ranger.api.commands import Command
+
 
 # Any class that is a subclass of "Command" will be integrated into ranger as a
 # command.  Try typing ":my_edit<ENTER>" in ranger!
-
-
 class my_edit(Command):
     # The so-called doc-string of the class will be visible in the built-in
     # help that is accessible by typing "?c" inside ranger.
@@ -59,3 +61,20 @@ class my_edit(Command):
         # This is a generic tab-completion function that iterates through the
         # content of the current directory.
         return self._tab_directory_content()
+
+class audio_preview(Command):
+  def execute(self):
+    cmd = self.arg(1)
+
+    subprocess.run("killall -9 sox", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
+    if cmd == "stop":
+      return
+
+    if cmd == "up":
+      self.fm.move(up=1)
+    elif cmd == "down":
+      self.fm.move(down=1)
+
+    subprocess.run("sox '" + self.fm.thisfile.path + "' -d &", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+

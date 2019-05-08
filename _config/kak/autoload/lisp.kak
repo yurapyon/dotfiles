@@ -41,7 +41,7 @@ add-highlighter shared/lisp/code/ regex [\s\(\)][0-9]+\.*[0-9]*[\s\(\)] 0:number
 
 add-highlighter shared/lisp/code/ regex [\s\(\)](nil|t)[\s\(\)] 0:value
 add-highlighter shared/lisp/code/ regex [\s\(\)]\Q#\E\\[a-zA-Z0-9][\s\(\)] 0:value
-add-highlighter shared/lisp/code/ regex [\s\(\)](:[^\s\(\)]+)[\s\(\)] 1:value
+add-highlighter shared/lisp/code/ regex [\s\(\)]([:&][^\s\(\)]+)[\s\(\)] 1:value
 
 add-highlighter shared/lisp/code/ regex \(|\) 0:comment
 
