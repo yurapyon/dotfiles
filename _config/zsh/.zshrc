@@ -112,8 +112,7 @@ alias sxiv='sxiv -a'
 alias ydl='youtube-dl --no-playlist'
 alias mpcclip='mpc -f "%artist% %title%" | head -1 | xclip -i -selection clipboard'
 
-alias k='kak'
-alias nvim='hey'
+alias e=$EDITOR
 
 # == functions ==
 

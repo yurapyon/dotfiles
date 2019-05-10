@@ -1,5 +1,5 @@
 export LANG=en_US.utf8
-export EDITOR='kak'
+export EDITOR='emacsclient -nw'
 export PATH=$PATH:'/home/mel/dotfiles/_wm/lemons'
 export LD_LIBRARY_PATH=/usr/local/lib64:/usr/lib
 export XDG_CONFIG_HOME=~/.config

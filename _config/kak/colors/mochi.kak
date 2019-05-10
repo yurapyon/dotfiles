@@ -50,12 +50,12 @@ face global MenuForeground bright-yellow,red+b
 # -----
 
 # Markup
-face global title  blue
-face global header cyan
+face global title  bright-green+br
+face global header bright-yellow+b
 face global bold   red
 face global italic yellow
-face global mono   green
-face global block  magenta
+face global mono   bright-green+b
+face global block  bright-magenta
 face global link   cyan
 face global bullet cyan
 face global list   yellow

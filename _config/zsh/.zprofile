@@ -1,4 +1,5 @@
 if [ -z "$TMUX" ]; then
-  mpd &> /dev/null &
+  emacs --daemon &> /dev/null
+  mpd &> /dev/null
   ~/dotfiles/_wm/lemons/citrus.lisp &
 fi

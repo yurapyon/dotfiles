@@ -1,12 +1,25 @@
+# kakrc
+
+# colors
+
 colorscheme mochi
 
-add-highlighter global/ regex \b(todo|note)\b 0:todo
+# plugins
 
+source "%val{config}/plugins/plug.kak/rc/plug.kak"
+plug "andreyorst/plug.kak" noload
+plug "alexherbo2/connect.kak"
+
+# highlighters
+
+add-highlighter global/ regex \b(todo|note)\b 0:todo
 add-highlighter global/ number-lines -separator ' '
 # add-highlighter global/ show-matching
 
+# keys
+
 map global insert <a-backspace> '<esc>xHdi'
-map global insert <tab> '<a-;><gt>'
+map global insert <tab> '<a-;><a-gt>'
 map global insert <s-tab> '<a-;><lt>'
 
 map global normal <ret> '<a-o>j'
@@ -22,28 +35,33 @@ map global normal <a-[> <a-(>
 map global normal <a-)> <a-]>
 map global normal <a-]> <a-)>
 
-map global user s ': send-text<ret>'
+map global user m '"jZ'
+map global user \' '"jzvc'
+
+# options
 
 set global indentwidth 2
 set global ui_options ncurses_assistant=cat
 set global autocomplete prompt
 
+# commands
+
 define-command editrc %{
   cd '~/.config/kak'
 }
 
-define-command vertical-split %{
-  eval tmux-terminal-vertical kak -c %val{session}
+alias global erc editrc
+
+define-command vertical-split -params .. -file-completion %{
+  tmux-terminal-vertical kak -c %val(session) %arg(@)
 }
 
-define-command horizontal-split %{
-  eval tmux-terminal-horizontal kak -c %val{session}
+define-command horizontal-split -params .. -file-completion %{
+  tmux-terminal-horizontal kak -c %val(session) %arg(@)
 }
 
-require-module tmux-repl
-
-alias global vertical-cd   tmux-repl-vertical
-alias global horizontal-cd tmux-repl-horizontal
+alias global vsp vertical-split
+alias global hsp horizontal-split
 
 # define-command aplay %{
   # eval -draft -save-regs '/"|^@' %{
@@ -62,6 +80,11 @@ alias global horizontal-cd tmux-repl-horizontal
 # map global user <esc> ': astop<ret>'
 
 define-command hlcomments %{
-  addhl buffer/_comm regions
-  addhl buffer/_comm/comments region '#' '$' fill comment
+  addhl buffer/_comments regions
+  addhl buffer/_comments/comments region '#' '$' fill comment
+}
+
+# clear scratch buffer
+hook -always -once global WinCreate '\Q*scratch*' %{
+  exec '%<a-d>'
 }
