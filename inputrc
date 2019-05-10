@@ -1,8 +1,3 @@
-"\e[1;5D": backward-word
-"\e[1;5C": forward-word
-
-set colored-stats on
-set completion-ignore-case on
-set show-all-if-ambiguous on
+set show-all-if-unmodified on
 set completion-display-width 1
-set match-hidden-files on
+set match-hidden-files off

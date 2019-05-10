@@ -1,0 +1,25 @@
+# yay
+
+alias pacman='sudo pacman'
+alias mount='sudo mount'
+alias umount='sudo umount'
+
+alias sx1='startx ~/dotfiles/_wm/sessions/dwm'
+
+alias rm='rm -I'
+alias _ls='ls -1NLv --group-directories-first --color=always'
+alias ls='echo -en "\e[7m\e[32m\e[1m"; pwd; echo -en "\e[0m"; _ls'
+
+alias pdf='zathura'
+alias e='emacsclient -nw'
+alias am='alsamixer'
+alias conn='sudo netctl stop-all; sudo netctl start'
+
+alias hddsleep='sudo hdparm -Y'
+alias hds='hddsleep /dev/sdb'
+
+alias sbcl='rlwrap sbcl'
+
+alias sxiv='sxiv -a'
+alias ydl='youtube-dl --no-playlist'
+alias mpcclip='mpc -f "%artist% %title%" | head -1 | xclip -i -selection clipboard'
