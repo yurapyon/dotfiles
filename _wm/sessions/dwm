@@ -1,14 +1,13 @@
 #!/bin/sh
 
-xrdb -merge $HOME/.Xresources
-xmodmap $HOME/.Xmodmap
-
-for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
-  [ -x "$f" ] && . "$f"
+for file in /etc/X11/xinit/xinitrc.d/?*.sh ; do
+  [ -x "$file" ] && source "$file"
 done
-unset f
+unset file
 
 source ~/.xinitrc
+xrdb -merge ~/.Xresources
+xmodmap ~/.Xmodmap
 
 ~/.fehbg &
 numlockx &
