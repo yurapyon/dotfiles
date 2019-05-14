@@ -22,6 +22,8 @@ class clip_sel(Command):
 
     output_file = open("/tmp/.rsel", "w")
 
+    # todo dont put \n on last line
+    #      allow for escaping spaces
     if cmd == "absolute":
       for selected_file in self.fm.thistab.get_selection():
         output_file.write(selected_file.path + "\n")

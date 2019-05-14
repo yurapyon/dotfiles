@@ -6,7 +6,6 @@ done
 unset file
 
 source ~/.xinitrc
-xrdb -merge ~/.Xresources
 xmodmap ~/.Xmodmap
 
 ~/.fehbg &

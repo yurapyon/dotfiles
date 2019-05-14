@@ -10,11 +10,13 @@
 (scroll-bar-mode -1)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
+(electric-indent-mode -1)
 
 (global-display-line-numbers-mode)
 
 (setq tab-width 2
       indent-tabs-mode nil)
+
 
 (setq backup-inhibited t)
 (setq auto-save-default nil)
@@ -36,9 +38,15 @@
 (setq show-paren-delay 0)
 (show-paren-mode t)
 
-(add-to-list 'custom-theme-load-path
-	     "~/.emacs.d/themes")
-(load-theme 'mochi t)
+; (add-to-list 'custom-theme-load-path
+;              "~/.emacs.d/themes")
+; (load-theme 'mochi t)
+
+(set-face-attribute 'font-lock-comment-face nil :foreground "#999999")
+(set-face-attribute 'font-lock-string-face nil :foreground "bright magenta")
+(set-face-attribute 'font-lock-keyword-face nil :foreground "bright green")
+(set-face-attribute 'font-lock-function-name-face nil :foreground "bright yellow")
+(set-face-attribute 'font-lock-builtin-face nil :foreground "bright blue")
 
 (unless window-system
   (require 'mouse)
