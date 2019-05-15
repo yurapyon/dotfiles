@@ -86,8 +86,8 @@ tabspaces: 8
 
 # Font configuration (changes require restart)
 font:
-  normal:
-    family: Gohu GohuFont
+  # normal:
+  # family: Gohu GohuFont
 
   # Normal (roman) font face
   #normal:
@@ -199,24 +199,24 @@ colors:
   #
 
   normal:
-    black:   '#101010'
-    red:     '#413518'
-    green:   '#394a44'
-    yellow:  '#aa740d'
-    blue:    '#2f353c'
-    magenta: '#635c50'
-    cyan:    '#9b8f68'
-    white:   '#a0a0a0'
+    red:     '#ca3e40'
+    yellow:  '#e39634'
+    green:   '#346837'
+    cyan:    '#2e5d59'
+    blue:    '#39548b'
+    magenta: '#9e155b'
+    white:   '#b8b8b8'
+    black:   '#2f1d1d'
 
   bright:
-    black:   '#3b3b3b'
-    red:     '#9b3912'
+    red:     '#cf977e'
+    yellow:  '#edd035'
     green:   '#4f814d'
-    yellow:  '#a7a862'
-    blue:    '#516674'
-    magenta: '#976878'
-    cyan:    '#9e9683'
-    white:   '#b0b0b0'
+    cyan:    '#659c93'
+    blue:    '#72819e'
+    magenta: '#ac5284'
+    white:   '#d0d0d0'
+    black:   '#4a3e40'
 
   # Dim colors
   #
