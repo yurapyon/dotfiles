@@ -86,8 +86,13 @@ tabspaces: 8
 
 # Font configuration (changes require restart)
 font:
+  normal:
+    family: Px437 ATI 8x14
+  size: 8
+
   # normal:
-  # family: Gohu GohuFont
+  #   family: t cherry
+  # size: 7
 
   # Normal (roman) font face
   #normal:
@@ -123,9 +128,6 @@ font:
 
     # The `style` can be specified to pick a specific face.
     #style: Italic
-
-  # Point size
-  size: 7
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -349,7 +351,7 @@ cursor:
   unfocused_hollow: true
 
 # Live config reload (changes require restart)
-live_config_reload: true
+live_config_reload: false
 
 # Shell
 #

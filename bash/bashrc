@@ -31,3 +31,5 @@ alias sx1='startx ~/dotfiles/_wm/sessions/dwm'
 alias @uo='cd /home/mel/documents/_programming/lisp/uokichi/src'
 alias @maru='cd /home/mel/documents/_programming/c/maru/src'
 alias @wm='cd /home/mel/dotfiles/_wm'
+
+alias gpom='git push origin master'

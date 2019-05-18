@@ -12,7 +12,6 @@ export RANGER_LOAD_DEFAULT_RC='false'
 source ~/.bashrc
 
 if [ -z "$TMUX" ]; then
-  emacs --daemon &> /dev/null
   [ ! -s ~/.config/mpd/pid ] && mpd &> /dev/null
   jack_control start &> /dev/null
   ~/dotfiles/_wm/lemons/citrus.lisp &
