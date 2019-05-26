@@ -1,8 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/mnt/media/dotfiles/_config/nvim'
-let g:netrw_dirhist_2='/home/mel/.config'
-let g:netrw_dirhist_3='/home/mel/.config/alacritty'
-let g:netrw_dirhist_4='/home/mel/.config/nvim'
-let g:netrw_dirhist_5='/mnt/media/dotfiles/_config/kak'
-let g:netrw_dirhist_6='/mnt/media/dotfiles/_wm/sessions'
