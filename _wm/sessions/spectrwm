@@ -13,4 +13,4 @@ numlockx &
 xsetroot -cursor_name left_ptr &
 compton -CG --no-fading-openclose &
 
-exec dwm
+exec spectrwm

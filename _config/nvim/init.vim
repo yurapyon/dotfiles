@@ -59,4 +59,6 @@ imap <3-LeftMouse> <nop>
 imap <4-LeftMouse> <nop>
 imap <LeftDrag> <nop>
 
+command Cdrc :cd ~/dotfiles/_config/nvim/
+
 colo mochi

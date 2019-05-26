@@ -1,5 +1,5 @@
 [global]
-    font = Kochi Gothic 10
+    font = Px437 ATI 8x14 11
 
     # Allow a small subset of html markup:
     #   <b>bold</b>

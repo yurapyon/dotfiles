@@ -25,7 +25,7 @@ hook -group lisp-highlight global WinSetOption filetype=lisp %{
     hook -once -always window WinSetOption filetype=.* %{ remove-highlighter window/lisp }
 }
 
-provide-module -override lisp %{
+provide-module lisp %{
 
 # Highlighters
 # ‾‾‾‾‾‾‾‾‾‾‾‾
@@ -53,7 +53,9 @@ add-highlighter shared/lisp/code/ regex (?<=[\s()])(error)(?=[\s()]) 0:keyword
 add-highlighter shared/lisp/code/ regex (?<=[\s()])(<|>|<=|=|>=|/=|\+|-|\*|/)(?=[\s()]) 0:operator
 
 define-command -hidden lisp-simple-indent %{
-    try %{ execute-keys -draft ';K<a-&>' }
+  try %{
+    execute-keys -draft
+  }
 }
 
 }
