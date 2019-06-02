@@ -1,0 +1,72 @@
+# i3 config file (v4)
+
+focus_follows_mouse no
+default_border none
+default_floating_border none
+workspace_layout tabbed
+
+# ---
+
+for_window [class="Gimp"] floating enable
+for_window [class="qjackctl"] floating enable
+for_window [class="mpv"] floating enable
+
+for_window [class="main"] floating enable
+
+# ---
+
+font pango:Px437 ATI 8x14
+
+client.focused #1c1c1c #4f814d #eaeaea
+client.unfocused #1c1c1c #1c1c1c #666666
+
+# ---
+
+set $mod Mod4
+floating_modifier $mod
+
+bindsym $mod+BackSpace kill
+bindsym $mod+Ctrl+c reload
+bindsym $mod+Ctrl+r restart
+bindsym $mod+Ctrl+e exit
+
+bindsym $mod+Ctrl+space floating toggle
+bindsym $mod+space focus mode_toggle
+
+bindsym $mod+Return exec --no-startup-id alacritty
+bindsym $mod+d exec dmenu_run -i -fn 'Px437 ATI 8x14' \
+  -nb \#1c1c1c -nf \#eaeaea -sb \#4f814d -sf \#1c1c1c
+
+bindsym $mod+Up exec --no-startup-id amixer -q sset Master 2+ || true
+bindsym $mod+Down exec --no-startup-id amixer -q sset Master 2- || true
+bindsym $mod+u exec --no-startup-id amixer -q sset Master toggle || true
+
+bindsym $mod+Right exec --no-startup-id sudo brightness.lisp +
+bindsym $mod+Left exec --no-startup-id sudo brightness.lisp -
+
+bindsym $mod+period exec --no-startup-id switch-desktop.lisp next
+bindsym $mod+comma exec --no-startup-id switch-desktop.lisp prev
+
+bindsym $mod+j focus left
+bindsym $mod+k focus right
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+q workspace $ws4
+bindsym $mod+w workspace $ws5
+bindsym $mod+e workspace $ws6
+
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+q move container to workspace $ws4
+bindsym $mod+Shift+w move container to workspace $ws5
+bindsym $mod+Shift+e move container to workspace $ws6

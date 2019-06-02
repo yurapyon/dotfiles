@@ -26,7 +26,7 @@ alias mpcclip='mpc -f "%artist% %title%" | head -1 | xclip -i -selection clipboa
 
 export PS1='\[\e[95m\]$(pwd | home 2)\[\e[0m\] '
 
-alias sx1='startx ~/dotfiles/_wm/sessions/spectrwm'
+alias sx1='startx ~/dotfiles/_wm/sessions/i3'
 
 alias @uo='cd /home/mel/documents/_programming/lisp/uokichi/src'
 alias @lyza='cd /home/mel/documents/_programming/lisp/lyza/src'

@@ -10,7 +10,7 @@ xmodmap ~/.Xmodmap
 
 ~/.fehbg &
 numlockx &
-xsetroot -cursor_name left_ptr &
+# xsetroot -cursor_name left_ptr &
 compton -CG --no-fading-openclose &
 
-exec spectrwm
+exec i3
