@@ -12,43 +12,30 @@ for_window [class="qjackctl"] floating enable
 for_window [class="mpv"] floating enable
 
 for_window [class="main"] floating enable
+for_window [class="float"] floating enable
+
+assign [class="Firefox"] 2
+assign [class="transmission"] 3
 
 # ---
 
-font pango:Px437 ATI 8x14
+font pango:Px437 ATI 8x14 0
 
-client.focused #1c1c1c #4f814d #eaeaea
-client.unfocused #1c1c1c #1c1c1c #666666
+set $green #4f814d
+set $gray  #1c1c1c
+set $white #eaeaea
+
+client.focused $green $green $white
+client.unfocused $gray $gray #666666
 
 # ---
 
 set $mod Mod4
 floating_modifier $mod
 
-bindsym $mod+BackSpace kill
 bindsym $mod+Ctrl+c reload
 bindsym $mod+Ctrl+r restart
-bindsym $mod+Ctrl+e exit
-
-bindsym $mod+Ctrl+space floating toggle
-bindsym $mod+space focus mode_toggle
-
-bindsym $mod+Return exec --no-startup-id alacritty
-bindsym $mod+d exec dmenu_run -i -fn 'Px437 ATI 8x14' \
-  -nb \#1c1c1c -nf \#eaeaea -sb \#4f814d -sf \#1c1c1c
-
-bindsym $mod+Up exec --no-startup-id amixer -q sset Master 2+ || true
-bindsym $mod+Down exec --no-startup-id amixer -q sset Master 2- || true
-bindsym $mod+u exec --no-startup-id amixer -q sset Master toggle || true
-
-bindsym $mod+Right exec --no-startup-id sudo brightness.lisp +
-bindsym $mod+Left exec --no-startup-id sudo brightness.lisp -
-
-bindsym $mod+period exec --no-startup-id switch-desktop.lisp next
-bindsym $mod+comma exec --no-startup-id switch-desktop.lisp prev
-
-bindsym $mod+j focus left
-bindsym $mod+k focus right
+bindsym $mod+Ctrl+k exit
 
 set $ws1 "1"
 set $ws2 "2"
@@ -64,9 +51,38 @@ bindsym $mod+q workspace $ws4
 bindsym $mod+w workspace $ws5
 bindsym $mod+e workspace $ws6
 
-bindsym $mod+Shift+1 move container to workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+q move container to workspace $ws4
-bindsym $mod+Shift+w move container to workspace $ws5
-bindsym $mod+Shift+e move container to workspace $ws6
+bindsym $mod+Ctrl+1 move container to workspace $ws1
+bindsym $mod+Ctrl+2 move container to workspace $ws2
+bindsym $mod+Ctrl+3 move container to workspace $ws3
+bindsym $mod+Ctrl+q move container to workspace $ws4
+bindsym $mod+Ctrl+w move container to workspace $ws5
+bindsym $mod+Ctrl+e move container to workspace $ws6
+
+bindsym $mod+h focus left
+bindsym $mod+l focus right
+bindsym $mod+space focus mode_toggle
+
+bindsym $mod+BackSpace kill
+bindsym $mod+Ctrl+space floating toggle
+bindsym $mod+s sticky toggle
+bindsym $mod+c move position center
+
+bindsym $mod+d exec dmenu_run -i -fn 'Px437 ATI 8x14' \
+  -nb \#1c1c1c -nf \#eaeaea -sb \#4f814d -sf \#1c1c1c
+
+bindsym $mod+Up   exec --no-startup-id amixer -q sset Master 2+ || true
+bindsym $mod+Down exec --no-startup-id amixer -q sset Master 2- || true
+bindsym $mod+u    exec --no-startup-id amixer -q sset Master toggle || true
+
+bindsym $mod+o exec --no-startup-id mpd-next.lisp prev
+bindsym $mod+p exec --no-startup-id mpd-next.lisp next
+bindsym $mod+i exec --no-startup-id mpd-next.lisp toggle
+
+bindsym $mod+Right exec --no-startup-id sudo brightness.lisp +
+bindsym $mod+Left  exec --no-startup-id sudo brightness.lisp -
+
+bindsym $mod+period exec --no-startup-id switch-desktop.lisp next
+bindsym $mod+comma  exec --no-startup-id switch-desktop.lisp prev
+
+bindsym Print      exec --no-startup-id screenshot.lisp all
+bindsym $mod+Print exec --no-startup-id screenshot.lisp part
