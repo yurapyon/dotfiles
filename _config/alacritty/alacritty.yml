@@ -91,7 +91,7 @@ font:
   size: 8
 
   # normal:
-  #  family: t cherry
+  #   family: t cherry
   # size: 7
 
   # Normal (roman) font face
@@ -208,7 +208,7 @@ colors:
     blue:    '#39548b'
     magenta: '#9e155b'
     white:   '#b8b8b8'
-    black:   '#2f1d1d'
+    black:   '#1c1c1c'
 
   bright:
     red:     '#cf977e'
@@ -218,7 +218,7 @@ colors:
     blue:    '#72819e'
     magenta: '#ac5284'
     white:   '#d0d0d0'
-    black:   '#4a3e40'
+    black:   '#404040'
 
   # Dim colors
   #
