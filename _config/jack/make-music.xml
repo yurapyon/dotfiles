@@ -1,34 +1,34 @@
 <!DOCTYPE patchbay>
-<patchbay name="make-music" version="0.5.7">
+<patchbay version="0.5.9" name="make-music">
  <output-sockets>
-  <socket exclusive="off" type="jack-audio" name="renoise 1" client="renoise">
-   <plug>output_01_left</plug>
-   <plug>output_01_right</plug>
-  </socket>
-  <socket exclusive="off" type="jack-audio" name="cl-collider 1" client="cl-collider">
+  <socket client="SuperCollider" type="jack-audio" name="SuperCollider 1" exclusive="off">
    <plug>out_1</plug>
    <plug>out_2</plug>
   </socket>
+  <socket client="renoise" type="jack-audio" name="renoise 1" exclusive="off">
+   <plug>output_01_left</plug>
+   <plug>output_01_right</plug>
+  </socket>
  </output-sockets>
  <input-sockets>
-  <socket exclusive="off" type="jack-audio" name="renoise 1" client="renoise">
+  <socket client="renoise" type="jack-audio" name="renoise 1" exclusive="off">
    <plug>input_02_left</plug>
    <plug>input_02_right</plug>
   </socket>
-  <socket exclusive="off" type="jack-audio" name="renoise 2" client="renoise">
+  <socket client="renoise" type="jack-audio" name="renoise 2" exclusive="off">
    <plug>input_03_left</plug>
    <plug>input_03_right</plug>
   </socket>
-  <socket exclusive="off" type="jack-audio" name="system 1" client="system">
+  <socket client="system" type="jack-audio" name="system 1" exclusive="off">
    <plug>playback_1</plug>
    <plug>playback_2</plug>
   </socket>
  </input-sockets>
  <slots/>
  <cables>
-  <cable type="jack-audio" output="renoise 1" input="renoise 1"/>
-  <cable type="jack-audio" output="cl-collider 1" input="system 1"/>
-  <cable type="jack-audio" output="cl-collider 1" input="renoise 2"/>
+  <cable type="jack-audio" input="system 1" output="SuperCollider 1"/>
+  <cable type="jack-audio" input="renoise 2" output="SuperCollider 1"/>
+  <cable type="jack-audio" input="renoise 1" output="renoise 1"/>
  </cables>
 </patchbay>
 

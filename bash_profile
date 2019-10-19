@@ -5,9 +5,11 @@ export PATH=$PATH:'/home/mel/dotfiles/_wm/lemons'
 export LD_LIBRARY_PATH='/usr/local/lib64:/usr/lib'
 export XDG_CONFIG_HOME='/home/mel/.config'
 
-export ALSA_CARD='Generic'
-export MPD_HOST='/home/mel/.mpd-socket'
+# export ALSA_CARD='Generic'
+export MPD_HOST='/tmp/.mpd-socket'
 export RANGER_LOAD_DEFAULT_RC='false'
+
+export WINIT_HIDPI_FACTOR=1.0
 
 source ~/.bashrc
 

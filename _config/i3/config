@@ -14,7 +14,7 @@ for_window [class="mpv"] floating enable
 for_window [class="main"] floating enable
 for_window [class="float"] floating enable
 
-assign [class="Firefox"] 2
+assign [class="firefox"] 2
 assign [class="transmission"] 3
 
 # ---
@@ -43,6 +43,7 @@ set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
+set $ws7 "7"
 
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -50,29 +51,44 @@ bindsym $mod+3 workspace $ws3
 bindsym $mod+q workspace $ws4
 bindsym $mod+w workspace $ws5
 bindsym $mod+e workspace $ws6
+bindsym $mod+a workspace $ws7
 
-bindsym $mod+Ctrl+1 move container to workspace $ws1
-bindsym $mod+Ctrl+2 move container to workspace $ws2
-bindsym $mod+Ctrl+3 move container to workspace $ws3
-bindsym $mod+Ctrl+q move container to workspace $ws4
-bindsym $mod+Ctrl+w move container to workspace $ws5
-bindsym $mod+Ctrl+e move container to workspace $ws6
+bindsym $mod+Mod1+1 move container to workspace $ws1
+bindsym $mod+Mod1+2 move container to workspace $ws2
+bindsym $mod+Mod1+3 move container to workspace $ws3
+bindsym $mod+Mod1+q move container to workspace $ws4
+bindsym $mod+Mod1+w move container to workspace $ws5
+bindsym $mod+Mod1+e move container to workspace $ws6
+bindsym $mod+Mod1+a move container to workspace $ws7
 
 bindsym $mod+h focus left
 bindsym $mod+l focus right
 bindsym $mod+space focus mode_toggle
 
 bindsym $mod+BackSpace kill
-bindsym $mod+Ctrl+space floating toggle
+bindsym $mod+Mod1+space floating toggle
 bindsym $mod+s sticky toggle
 bindsym $mod+c move position center
 
-bindsym $mod+d exec dmenu_run -i -fn 'Px437 ATI 8x14' \
-  -nb \#1c1c1c -nf \#eaeaea -sb \#4f814d -sf \#1c1c1c
+bindsym $mod+d exec --no-startup-id \
+  dmenu_run -i -fn 'Px437 ATI 8x14' -nb \#1c1c1c -nf \#eaeaea -sb \#4f814d -sf \#1c1c1c
 
-bindsym $mod+Up   exec --no-startup-id amixer -q sset Master 2+ || true
-bindsym $mod+Down exec --no-startup-id amixer -q sset Master 2- || true
-bindsym $mod+u    exec --no-startup-id amixer -q sset Master toggle || true
+# bindsym $mod+Up   exec --no-startup-id amixer -q sset Master 2+ || true
+# bindsym $mod+Down exec --no-startup-id amixer -q sset Master 2- || true
+# bindsym $mod+u    exec --no-startup-id amixer -q sset Master toggle || true
+
+# bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q sset Master 2+ || true
+# bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q sset Master 2- || true
+# bindsym XF86AudioMute        exec --no-startup-id amixer -q sset Master toggle || true
+
+bindsym $mod+Up   exec --no-startup-id volume.lisp up
+bindsym $mod+Down exec --no-startup-id volume.lisp down
+# bindsym $mod+u    exec --no-startup-id volume.lisp
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id volume.lisp up
+bindsym XF86AudioLowerVolume exec --no-startup-id volume.lisp down
+bindsym XF86AudioMute        exec --no-startup-id volume.lisp mute
+
 
 bindsym $mod+o exec --no-startup-id mpd-next.lisp prev
 bindsym $mod+p exec --no-startup-id mpd-next.lisp next
@@ -80,9 +96,21 @@ bindsym $mod+i exec --no-startup-id mpd-next.lisp toggle
 
 bindsym $mod+Right exec --no-startup-id sudo brightness.lisp +
 bindsym $mod+Left  exec --no-startup-id sudo brightness.lisp -
+bindsym XF86MonBrightnessUp   exec --no-startup-id sudo brightness.lisp +
+bindsym XF86MonBrightnessDown exec --no-startup-id sudo brightness.lisp -
 
 bindsym $mod+period exec --no-startup-id switch-desktop.lisp next
 bindsym $mod+comma  exec --no-startup-id switch-desktop.lisp prev
 
 bindsym Print      exec --no-startup-id screenshot.lisp all
 bindsym $mod+Print exec --no-startup-id screenshot.lisp part
+
+# ---
+
+workspace "1" output primary
+workspace "2" output primary
+workspace "3" output primary
+workspace "4" output primary
+workspace "5" output primary
+workspace "6" output primary
+workspace "7" output VGA1

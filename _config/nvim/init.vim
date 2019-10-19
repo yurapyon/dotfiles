@@ -8,7 +8,8 @@ Plug 'ap/vim-css-color'
 
 call plug#end()
 
-" lisp stuff
+" lisp
+" todo open files in paren mode then keybinds for smart indent and paren mode
 
 "let g:lisp_rainbow=1
 
@@ -20,8 +21,15 @@ let g:slimv_repl_syntax=0
 
 let g:paredit_mode=0
 
-" todo open files in paren mode then keybinds for smart indent and paren mode
 let g:parinfer_mode='indent'
+
+" c/c++
+
+let g:c_syntax_for_h = 1
+au FileType c set shiftwidth=4
+au FileType cpp set shiftwidth=4
+
+"
 
 set expandtab
 
@@ -41,8 +49,6 @@ set smartcase
 
 au BufEnter * set fo-=c fo-=r fo-=o
 
-" map <CR> o<Esc>
-
 let mapleader="\<Space>"
 map <Leader><CR> :noh<CR>
 
@@ -51,13 +57,15 @@ nmap <Right> <nop>
 nmap <Up>    <nop>
 nmap <Down>  <nop>
 
-set mouse=a
-
 imap <LeftMouse> <nop>
 imap <2-LeftMouse> <nop>
 imap <3-LeftMouse> <nop>
 imap <4-LeftMouse> <nop>
 imap <LeftDrag> <nop>
+
+set mouse=a
+
+"
 
 command Cdrc :cd ~/dotfiles/_config/nvim/
 

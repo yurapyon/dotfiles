@@ -9,7 +9,7 @@ source ~/.xinitrc
 xmodmap ~/.Xmodmap
 
 ~/.fehbg &
-numlockx &
+# numlockx &
 compton -CG --no-fading-openclose &
 
 exec i3

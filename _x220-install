@@ -1,0 +1,135 @@
+====
+==== to do
+====
+
+partition disks w fdisk
+  set partition types
+format partitions
+  EFI mkfs.fat -F32 /dev/sdxY
+  Root mkfs.ext4
+mount Root to /mnt
+pacstrap /mnt base base-devel
+mount EFI partition to /mnt/efi
+mount home partition to /mnt/home
+genfstab -U /mnt >> /mnt/etc/fstab
+arch-chroot
+follow directions for arch install
+pacman -S intel-ucode
+          grub
+          efibootmgr
+grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
+pacman -S wpa_supplicant
+          dialog
+reboot into arch install
+
+useradd mel
+visudo add mel
+uncomment multilib section in /etc/pacman.conf
+
+archwiki/intel graphics: tear free gfx
+
+qjackctl/settings/options: patchbay persistance
+qjackctl/settings/misc: enable dbus
+                        enable jack dubs
+                       disable stop jack server
+                        enable hide main window text labels
+                       disable replace connections
+pavucontrol jacksink as default
+
+neovim
+  create .config/nvim/autoload/
+    and put plug.vim there
+  :PlugUpdate
+
+get 'yay' from aur
+
+systemctl enable tlp.service
+
+git config --global user.email ""
+git config --global user.name ""
+
+(load "quicklisp.lisp")
+
+====
+==== programs
+====
+
+* from aur
+
+install
+  ntfs-3g
+  rust (parinfer)
+  sbcl
+
+  teminal apps
+    sudo
+    youtube-dl
+    git
+    bash-completion
+    neovim
+      python-neovim
+    tmux
+    ranger
+    ncdu
+    htop
+    tlp
+      tp_smapi
+      acpi_call
+    rlwrap
+    p7zip
+    unrar
+    * woeusb
+
+  x11
+    xf86-video-intel
+    xf86-video-intel
+    xorg-server
+    xorg-xinit
+    xorg-xinput
+    xorg-xset
+    xorg-xev
+    xorg-xprop
+    xf86-input-wacom
+    ttf-dejavu
+    * ttf-mplus
+    * ttf-nanum
+
+  wm
+    i3
+    i3lock
+    compton
+    dmenu
+    alacritty
+    maim
+    slop
+    feh
+
+  x11 apps
+    gufw
+    mpv
+    sxiv
+    firefox
+    zathura
+    zathura-pdf-mupdf
+    virtualbox
+
+  creative
+    gimp
+    renoise
+    supercollider
+      sc3-plugins
+
+  sound
+    alsa-utils
+    alsa-plugins
+    pulseaudio-jack
+    pavucontrol
+    jack2
+      python-dbus
+      python2
+    qjackctl
+
+  audio apps
+    mpc
+    ncmpcpp
+    mpd

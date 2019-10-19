@@ -5,7 +5,7 @@ keycode 34 = parenleft braceleft parenleft braceleft
 keycode 35 = parenright braceright parenright braceright
 
 ! pause is insert
-keysym Pause = Insert
+! keysym Pause = Insert
 
 ! menu is super
 keycode 135 = Super_R

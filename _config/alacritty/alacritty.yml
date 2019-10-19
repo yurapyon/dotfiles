@@ -52,7 +52,7 @@ window:
   decorations: full
 
   # When true, alacritty starts maximized.
-  start_maximized: false
+  # start_maximized: false
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.
@@ -88,7 +88,8 @@ tabspaces: 8
 font:
   normal:
     family: Px437 ATI 8x14
-  size: 8
+
+  size: 12
 
   # normal:
   #   family: t cherry
@@ -159,10 +160,10 @@ font:
   use_thin_strokes: true
 
 # Display the time it takes to redraw each frame.
-render_timer: false
+# render_timer: false
 
 # Keep the log file after quitting Alacritty.
-persistent_logging: false
+# persistent_logging: false
 
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
@@ -472,11 +473,11 @@ key_bindings:
   #- { key: V,        mods: Control|Shift, action: Paste            }
   #- { key: C,        mods: Control|Shift, action: Copy             }
   #- { key: Insert,   mods: Shift,         action: PasteSelection   }
-  #- { key: Key0,     mods: Control,       action: ResetFontSize    }
-  #- { key: Equals,   mods: Control,       action: IncreaseFontSize }
-  #- { key: Add,      mods: Control,       action: IncreaseFontSize }
-  #- { key: Subtract, mods: Control,       action: DecreaseFontSize }
-  #- { key: Minus,    mods: Control,       action: DecreaseFontSize }
+  - { key: Key0,     mods: Control,       action: None }
+  - { key: Equals,   mods: Control,       action: None }
+  - { key: Add,      mods: Control,       action: None }
+  - { key: Subtract, mods: Control,       action: None }
+  - { key: Minus,    mods: Control,       action: None }
 
   # (macOS only)
   #- { key: Key0,   mods: Command, action: ResetFontSize    }
