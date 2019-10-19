@@ -82,14 +82,12 @@ install
 
   x11
     xf86-video-intel
-    xf86-video-intel
     xorg-server
     xorg-xinit
     xorg-xinput
     xorg-xset
     xorg-xev
     xorg-xprop
-    xf86-input-wacom
     ttf-dejavu
     * ttf-mplus
     * ttf-nanum
@@ -112,8 +110,13 @@ install
     zathura
     zathura-pdf-mupdf
     virtualbox
+      virtualbox-host-modules-arch
+      virtualbox-guest-iso
+      virtualbox-guest-utils
+      xf86-video-vmware
 
   creative
+    xf86-input-wacom
     gimp
     renoise
     supercollider
@@ -126,7 +129,6 @@ install
     pavucontrol
     jack2
       python-dbus
-      python2
     qjackctl
 
   audio apps
