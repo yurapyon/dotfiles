@@ -5,6 +5,7 @@ call plug#begin('~/.local/share/nvim/vim-plug')
 Plug 'kovisoft/slimv'
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 Plug 'ap/vim-css-color'
+Plug 'JuliaEditorSupport/julia-vim'
 
 call plug#end()
 
@@ -28,6 +29,10 @@ let g:parinfer_mode='indent'
 let g:c_syntax_for_h = 1
 au FileType c set shiftwidth=4
 au FileType cpp set shiftwidth=4
+
+" juila
+
+let g:latex_to_unicode_cmd_mapping = '<C-\><Tab>'
 
 "
 

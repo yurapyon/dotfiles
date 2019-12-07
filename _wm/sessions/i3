@@ -10,6 +10,6 @@ xmodmap ~/.Xmodmap
 
 ~/.fehbg &
 # numlockx &
-compton -CG --no-fading-openclose &
+picom -CG --no-fading-openclose &
 
 exec i3

@@ -8,11 +8,15 @@ workspace_layout tabbed
 # ---
 
 for_window [class="Gimp"] floating enable
-for_window [class="qjackctl"] floating enable
+for_window [class="QjackCtl"] floating enable
 for_window [class="mpv"] floating enable
 
 for_window [class="main"] floating enable
 for_window [class="float"] floating enable
+
+for_window [class="Pd"] floating enable
+for_window [class="PatchWindow"] floating enable
+for_window [class="HelpBrowser"] floating enable
 
 assign [class="firefox"] 2
 assign [class="transmission"] 3

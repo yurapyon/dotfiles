@@ -26,6 +26,8 @@ useradd mel
 visudo add mel
 uncomment multilib section in /etc/pacman.conf
 
+after installing pacman-contrib, rankmirrors /etc/pacman.d
+
 archwiki/intel graphics: tear free gfx
 
 qjackctl/settings/options: patchbay persistance
@@ -55,19 +57,20 @@ git config --global user.name ""
 ====
 
 * from aur
+^ personal
 
 install
   ntfs-3g
-  rust (parinfer)
-  sbcl
 
   teminal apps
     sudo
+    pacman-contrib
     youtube-dl
     git
     bash-completion
     neovim
       python-neovim
+      rust (parinfer)
     tmux
     ranger
     ncdu
@@ -78,7 +81,16 @@ install
     rlwrap
     p7zip
     unrar
+    mediainfo
     * woeusb
+    openbsd-netcat
+
+  programming
+    sbcl
+    ^ cake
+    julia
+    valgrind
+    gdb
 
   x11
     xf86-video-intel
@@ -95,7 +107,7 @@ install
   wm
     i3
     i3lock
-    compton
+    picom
     dmenu
     alacritty
     maim
@@ -114,6 +126,7 @@ install
       virtualbox-guest-iso
       virtualbox-guest-utils
       xf86-video-vmware
+    nicotine+
 
   creative
     xf86-input-wacom
@@ -121,6 +134,9 @@ install
     renoise
     supercollider
       sc3-plugins
+    glfw-x11
+    glm
+    imlib2
 
   sound
     alsa-utils
