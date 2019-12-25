@@ -3,24 +3,8 @@
 call plug#begin('~/.local/share/nvim/vim-plug')
 
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
-Plug 'JuliaEditorSupport/julia-vim'
-" Plug 'kovisoft/slimv'
-" Plug 'ap/vim-css-color'
 
 call plug#end()
-
-" lisp
-" todo open files in paren mode then keybinds for smart indent and paren mode
-
-"let g:lisp_rainbow=1
-
-" let g:slimv_impl='sbcl'
-" let g:slimv_leader='\'
-" let g:slimv_keybindings=2
-" let g:slimv_repl_split=0
-" let g:slimv_repl_syntax=0
-
-" let g:paredit_mode=0
 
 let g:parinfer_mode='indent'
 
@@ -29,10 +13,6 @@ let g:parinfer_mode='indent'
 let g:c_syntax_for_h = 1
 au FileType c set shiftwidth=4
 au FileType cpp set shiftwidth=4
-
-" juila
-
-let g:latex_to_unicode_cmd_mapping = '<C-\><Tab>'
 
 "
 
@@ -74,7 +54,5 @@ set splitbelow
 set splitright
 
 "
-
-command Cdrc :cd ~/dotfiles/_config/nvim/
 
 colo mochi
