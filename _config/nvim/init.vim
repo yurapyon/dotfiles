@@ -2,10 +2,10 @@
 
 call plug#begin('~/.local/share/nvim/vim-plug')
 
-Plug 'kovisoft/slimv'
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
-Plug 'ap/vim-css-color'
 Plug 'JuliaEditorSupport/julia-vim'
+" Plug 'kovisoft/slimv'
+" Plug 'ap/vim-css-color'
 
 call plug#end()
 
@@ -14,13 +14,13 @@ call plug#end()
 
 "let g:lisp_rainbow=1
 
-let g:slimv_impl='sbcl'
-let g:slimv_leader='\'
-let g:slimv_keybindings=2
-let g:slimv_repl_split=0
-let g:slimv_repl_syntax=0
+" let g:slimv_impl='sbcl'
+" let g:slimv_leader='\'
+" let g:slimv_keybindings=2
+" let g:slimv_repl_split=0
+" let g:slimv_repl_syntax=0
 
-let g:paredit_mode=0
+" let g:paredit_mode=0
 
 let g:parinfer_mode='indent'
 
@@ -45,7 +45,7 @@ set number
 set numberwidth=3
 
 set list
-set listchars=tab:_\ ,trail:-,
+set listchars=tab:_\ ,trail:.,
 
 set scrolloff=4
 
@@ -69,6 +69,9 @@ imap <4-LeftMouse> <nop>
 imap <LeftDrag> <nop>
 
 set mouse=a
+
+set splitbelow
+set splitright
 
 "
 
