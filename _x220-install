@@ -50,7 +50,8 @@ systemctl enable tlp.service
 git config --global user.email ""
 git config --global user.name ""
 
-(load "quicklisp.lisp")
+visudo brightness.scm
+visudo netctl
 
 ====
 ==== programs
@@ -61,6 +62,7 @@ git config --global user.name ""
 
 install
   ntfs-3g
+  ntpd
 
   teminal apps
     sudo
@@ -126,7 +128,9 @@ install
       virtualbox-guest-iso
       virtualbox-guest-utils
       xf86-video-vmware
-    nicotine+
+    soulseekqt
+    easytag
+    transmission-qt
 
   creative
     xf86-input-wacom

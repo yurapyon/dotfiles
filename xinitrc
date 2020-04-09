@@ -1,5 +1,5 @@
 xset r rate 360 30
-xinput set-prop "TPPS/2 IBM TrackPoint" "libinput Accel Speed" 0.8
+xinput set-prop "TPPS/2 IBM TrackPoint" "libinput Accel Speed" 1
 xinput set-prop "TPPS/2 IBM TrackPoint" "libinput Accel Profile Enabled" 0 1
 xinput set-prop "TPPS/2 IBM TrackPoint" "libinput Wheel Emulation" 1
 xinput set-prop "TPPS/2 IBM TrackPoint" "libinput Wheel Emulation Button" 2

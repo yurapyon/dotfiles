@@ -1,34 +1,44 @@
 <!DOCTYPE patchbay>
-<patchbay version="0.5.9" name="make-music">
+<patchbay version="0.6.1" name="make-music">
  <output-sockets>
-  <socket client="SuperCollider" type="jack-audio" name="SuperCollider 1" exclusive="off">
+  <socket client="VCV Rack" exclusive="off" name="VCV Rack 1" type="jack-audio">
+   <plug>outport 0</plug>
+   <plug>outport 1</plug>
+  </socket>
+  <socket client="SuperCollider" exclusive="off" name="SuperCollider 1" type="jack-audio">
    <plug>out_1</plug>
    <plug>out_2</plug>
   </socket>
-  <socket client="renoise" type="jack-audio" name="renoise 1" exclusive="off">
+  <socket client="renoise" exclusive="off" name="renoise 1" type="jack-audio">
    <plug>output_01_left</plug>
    <plug>output_01_right</plug>
   </socket>
  </output-sockets>
  <input-sockets>
-  <socket client="renoise" type="jack-audio" name="renoise 1" exclusive="off">
+  <socket client="renoise" exclusive="off" name="renoise 1" type="jack-audio">
    <plug>input_02_left</plug>
    <plug>input_02_right</plug>
   </socket>
-  <socket client="renoise" type="jack-audio" name="renoise 2" exclusive="off">
+  <socket client="renoise" exclusive="off" name="renoise 2" type="jack-audio">
    <plug>input_03_left</plug>
    <plug>input_03_right</plug>
   </socket>
-  <socket client="system" type="jack-audio" name="system 1" exclusive="off">
+  <socket client="renoise" exclusive="off" name="renoise 3" type="jack-audio">
+   <plug>input_03_left</plug>
+   <plug>input_03_right</plug>
+  </socket>
+  <socket client="system" exclusive="off" name="system 1" type="jack-audio">
    <plug>playback_1</plug>
    <plug>playback_2</plug>
   </socket>
  </input-sockets>
  <slots/>
  <cables>
-  <cable type="jack-audio" input="system 1" output="SuperCollider 1"/>
-  <cable type="jack-audio" input="renoise 2" output="SuperCollider 1"/>
-  <cable type="jack-audio" input="renoise 1" output="renoise 1"/>
+  <cable input="system 1" output="SuperCollider 1" type="jack-audio"/>
+  <cable input="renoise 2" output="SuperCollider 1" type="jack-audio"/>
+  <cable input="renoise 1" output="renoise 1" type="jack-audio"/>
+  <cable input="system 1" output="VCV Rack 1" type="jack-audio"/>
+  <cable input="renoise 3" output="VCV Rack 1" type="jack-audio"/>
  </cables>
 </patchbay>
 

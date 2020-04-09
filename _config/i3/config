@@ -7,23 +7,25 @@ workspace_layout tabbed
 
 # ---
 
-for_window [class="Gimp"] floating enable
+# for_window [class="Gimp"] floating enable
 for_window [class="QjackCtl"] floating enable
 for_window [class="mpv"] floating enable
 
 for_window [class="main"] floating enable
 for_window [class="float"] floating enable
 
-for_window [class="Pd"] floating enable
-for_window [class="PatchWindow"] floating enable
-for_window [class="HelpBrowser"] floating enable
+for_window [class="zoom"] floating enable, border normal 2
+
+for_window [class="Pd"] floating enable, border normal 2
+for_window [class="PatchWindow"] floating enable, border normal 2
+for_window [class="HelpBrowser"] floating enable, border normal 2
 
 assign [class="firefox"] 2
 assign [class="transmission"] 3
 
 # ---
 
-font pango:Px437 ATI 8x14 0
+font pango:Px437 ATI 8x14 12
 
 set $green #4f814d
 set $gray  #1c1c1c
@@ -41,13 +43,13 @@ bindsym $mod+Ctrl+c reload
 bindsym $mod+Ctrl+r restart
 bindsym $mod+Ctrl+k exit
 
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
 
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -70,51 +72,66 @@ bindsym $mod+l focus right
 bindsym $mod+space focus mode_toggle
 
 bindsym $mod+BackSpace kill
-bindsym $mod+Mod1+space floating toggle
-bindsym $mod+s sticky toggle
+bindsym $mod+Ctrl+space floating toggle
+bindsym $mod+Ctrl+s sticky toggle
 bindsym $mod+c move position center
 
+bindsym $mod+s exec --no-startup-id scm.sh
 bindsym $mod+d exec --no-startup-id \
   dmenu_run -i -fn 'Px437 ATI 8x14' -nb \#1c1c1c -nf \#eaeaea -sb \#4f814d -sf \#1c1c1c
 
-# bindsym $mod+Up   exec --no-startup-id amixer -q sset Master 2+ || true
-# bindsym $mod+Down exec --no-startup-id amixer -q sset Master 2- || true
-# bindsym $mod+u    exec --no-startup-id amixer -q sset Master toggle || true
-
-# bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q sset Master 2+ || true
-# bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q sset Master 2- || true
-# bindsym XF86AudioMute        exec --no-startup-id amixer -q sset Master toggle || true
-
 bindsym $mod+Up   exec --no-startup-id volume.lisp up
 bindsym $mod+Down exec --no-startup-id volume.lisp down
-# bindsym $mod+u    exec --no-startup-id volume.lisp
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id volume.lisp up
 bindsym XF86AudioLowerVolume exec --no-startup-id volume.lisp down
 bindsym XF86AudioMute        exec --no-startup-id volume.lisp mute
 
-
 bindsym $mod+o exec --no-startup-id mpd-next.lisp prev
 bindsym $mod+p exec --no-startup-id mpd-next.lisp next
 bindsym $mod+i exec --no-startup-id mpd-next.lisp toggle
 
-bindsym $mod+Right exec --no-startup-id sudo brightness.lisp +
-bindsym $mod+Left  exec --no-startup-id sudo brightness.lisp -
-bindsym XF86MonBrightnessUp   exec --no-startup-id sudo brightness.lisp +
-bindsym XF86MonBrightnessDown exec --no-startup-id sudo brightness.lisp -
+bindsym $mod+Right exec --no-startup-id sudo brightness.scm +
+bindsym $mod+Left  exec --no-startup-id sudo brightness.scm -
+bindsym XF86MonBrightnessUp   exec --no-startup-id sudo brightness.scm +
+bindsym XF86MonBrightnessDown exec --no-startup-id sudo brightness.scm -
 
-bindsym $mod+period exec --no-startup-id switch-desktop.lisp next
-bindsym $mod+comma  exec --no-startup-id switch-desktop.lisp prev
+bindsym $mod+Control+Right exec --no-startup-id sudo brightness.scm ++
+bindsym $mod+Control+Left  exec --no-startup-id sudo brightness.scm --
+
+bindsym $mod+Shift+Left  exec --no-startup-id redshift -PO 2700
+bindsym $mod+Shift+Right exec --no-startup-id redshift -x
+
+bindsym $mod+period exec --no-startup-id switch-desktop.scm next
+bindsym $mod+comma  exec --no-startup-id switch-desktop.scm prev
 
 bindsym Print      exec --no-startup-id screenshot.lisp all
 bindsym $mod+Print exec --no-startup-id screenshot.lisp part
 
+bindsym $mod+XF86Forward workspace next
+bindsym $mod+XF86Back    workspace prev
+
+bindsym XF86Forward nop
+bindsym XF86Back    nop
+bindsym Mod1+XF86Forward nop
+bindsym Mod1+XF86Back    nop
+bindsym Ctrl+XF86Forward nop
+bindsym Ctrl+XF86Back    nop
+bindsym Shift+XF86Forward nop
+bindsym Shift+XF86Back    nop
+
 # ---
 
-workspace "1" output primary
-workspace "2" output primary
-workspace "3" output primary
-workspace "4" output primary
-workspace "5" output primary
-workspace "6" output primary
-workspace "7" output VGA1
+bindsym --release button2 kill
+# bindsym button4 nop
+# bindsym button5 nop
+
+# ---
+
+workspace $ws1 output primary
+workspace $ws2 output primary
+workspace $ws3 output primary
+workspace $ws4 output primary
+workspace $ws5 output primary
+workspace $ws6 output primary
+workspace $ws7 output VGA1

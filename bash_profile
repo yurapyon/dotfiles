@@ -2,8 +2,7 @@ if [ -z "$TMUX" ]; then
   export LANG='en_US.utf8'
   export EDITOR='nvim'
 
-  export GERBIL_HOME='/home/mel/documents/_programming/_linux/gerbil/gerbil'
-  export PATH=$PATH:'/home/mel/dotfiles/_wm/lemons':"$GERBIL_HOME/bin"
+  export PATH=$PATH:'/home/mel/dotfiles/_wm/lemons'
   export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:'/usr/local/lib64:/usr/local/lib:/usr/lib'
   export XDG_CONFIG_HOME='/home/mel/.config'
 
@@ -11,7 +10,7 @@ if [ -z "$TMUX" ]; then
   export MPD_HOST='/tmp/.mpd-socket'
   export RANGER_LOAD_DEFAULT_RC='false'
 
-  export WINIT_HIDPI_FACTOR=1.0
+  # export WINIT_HIDPI_FACTOR=1.0
 
   export HISTCONTROL=ignoreboth:erasedups
 
