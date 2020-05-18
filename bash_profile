@@ -6,7 +6,7 @@ if [ -z "$TMUX" ]; then
   export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:'/usr/local/lib64:/usr/local/lib:/usr/lib'
   export XDG_CONFIG_HOME='/home/mel/.config'
 
-  # export ALSA_CARD='Generic'
+  # export ALSA_CARD='PCH'
   export MPD_HOST='/tmp/.mpd-socket'
   export RANGER_LOAD_DEFAULT_RC='false'
 

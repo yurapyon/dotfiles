@@ -5,6 +5,7 @@ call plug#begin('~/.local/share/nvim/vim-plug')
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'tikhomirov/vim-glsl'
+Plug 'leafo/moonscript-vim'
 
 call plug#end()
 
