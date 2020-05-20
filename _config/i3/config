@@ -80,33 +80,33 @@ bindsym $mod+s exec --no-startup-id scm.sh
 bindsym $mod+d exec --no-startup-id \
   dmenu_run -i -fn 'Px437 ATI 8x14' -nb \#1c1c1c -nf \#eaeaea -sb \#4f814d -sf \#1c1c1c
 
-bindsym $mod+Up   exec --no-startup-id volume.lisp up
-bindsym $mod+Down exec --no-startup-id volume.lisp down
+bindsym $mod+Up   exec --no-startup-id volume.ss up
+bindsym $mod+Down exec --no-startup-id volume.ss down
 
-bindsym XF86AudioRaiseVolume exec --no-startup-id volume.lisp up
-bindsym XF86AudioLowerVolume exec --no-startup-id volume.lisp down
-bindsym XF86AudioMute        exec --no-startup-id volume.lisp mute
+bindsym XF86AudioRaiseVolume exec --no-startup-id volume.ss up
+bindsym XF86AudioLowerVolume exec --no-startup-id volume.ss down
+bindsym XF86AudioMute        exec --no-startup-id volume.ss mute
 
-bindsym $mod+o exec --no-startup-id mpd-next.lisp prev
-bindsym $mod+p exec --no-startup-id mpd-next.lisp next
-bindsym $mod+i exec --no-startup-id mpd-next.lisp toggle
+bindsym $mod+o exec --no-startup-id mpd-next.ss prev
+bindsym $mod+p exec --no-startup-id mpd-next.ss next
+bindsym $mod+i exec --no-startup-id mpd-next.ss toggle
 
-bindsym $mod+Right exec --no-startup-id sudo brightness.scm +
-bindsym $mod+Left  exec --no-startup-id sudo brightness.scm -
-bindsym XF86MonBrightnessUp   exec --no-startup-id sudo brightness.scm +
-bindsym XF86MonBrightnessDown exec --no-startup-id sudo brightness.scm -
+bindsym $mod+Right exec --no-startup-id sudo brightness.ss +
+bindsym $mod+Left  exec --no-startup-id sudo brightness.ss -
+bindsym XF86MonBrightnessUp   exec --no-startup-id sudo brightness.ss +
+bindsym XF86MonBrightnessDown exec --no-startup-id sudo brightness.ss -
 
-bindsym $mod+Control+Right exec --no-startup-id sudo brightness.scm ++
-bindsym $mod+Control+Left  exec --no-startup-id sudo brightness.scm --
+bindsym $mod+Control+Right exec --no-startup-id sudo brightness.ss ++
+bindsym $mod+Control+Left  exec --no-startup-id sudo brightness.ss --
 
 bindsym $mod+Shift+Left  exec --no-startup-id redshift -PO 2700
 bindsym $mod+Shift+Right exec --no-startup-id redshift -x
 
-bindsym $mod+period exec --no-startup-id switch-desktop.scm next
-bindsym $mod+comma  exec --no-startup-id switch-desktop.scm prev
+bindsym $mod+period exec --no-startup-id switch-desktop.ss next
+bindsym $mod+comma  exec --no-startup-id switch-desktop.ss prev
 
-bindsym Print      exec --no-startup-id screenshot.lisp all
-bindsym $mod+Print exec --no-startup-id screenshot.lisp part
+bindsym Print      exec --no-startup-id screenshot.ss all
+bindsym $mod+Print exec --no-startup-id screenshot.ss part
 
 bindsym $mod+XF86Forward workspace next
 bindsym $mod+XF86Back    workspace prev
