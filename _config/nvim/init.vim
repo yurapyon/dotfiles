@@ -6,6 +6,7 @@ Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'tikhomirov/vim-glsl'
 Plug 'leafo/moonscript-vim'
+Plug 'https://github.com/rust-lang/rust.vim'
 
 call plug#end()
 

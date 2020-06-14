@@ -56,3 +56,6 @@ colors:
 background_opacity: 0.4
 
 live_config_reload: false
+
+mouse:
+  hide_when_typing: true
