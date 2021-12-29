@@ -1,0 +1,2 @@
+[build]
+rustc-wrapper = "/home/mel/.cargo/bin/sccache"

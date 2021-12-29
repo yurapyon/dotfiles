@@ -72,7 +72,6 @@ install
     bash-completion
     neovim
       python-neovim
-      rust (parinfer)
     tmux
     ranger
     ncdu
@@ -88,9 +87,8 @@ install
     openbsd-netcat
 
   programming
-    sbcl
-    ^ cake
-    julia
+    rust
+    guile
     valgrind
     gdb
 
@@ -99,6 +97,7 @@ install
     xorg-server
     xorg-xinit
     xorg-xinput
+    xf86-input-evdev
     xorg-xset
     xorg-xev
     xorg-xprop
@@ -123,14 +122,14 @@ install
     firefox
     zathura
     zathura-pdf-mupdf
+    soulseekqt
+    easytag
+    transmission-qt
     virtualbox
       virtualbox-host-modules-arch
       virtualbox-guest-iso
       virtualbox-guest-utils
       xf86-video-vmware
-    soulseekqt
-    easytag
-    transmission-qt
 
   creative
     xf86-input-wacom
@@ -149,6 +148,7 @@ install
     pavucontrol
     jack2
       python-dbus
+      jack2-dbus
     qjackctl
 
   audio apps

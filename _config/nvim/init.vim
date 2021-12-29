@@ -7,6 +7,8 @@ Plug 'JuliaEditorSupport/julia-vim'
 Plug 'tikhomirov/vim-glsl'
 Plug 'leafo/moonscript-vim'
 Plug 'https://github.com/rust-lang/rust.vim'
+Plug 'https://github.com/ziglang/zig.vim'
+Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 
 call plug#end()
 
@@ -17,6 +19,7 @@ let g:parinfer_mode='indent'
 let g:c_syntax_for_h = 1
 au FileType c set shiftwidth=4
 au FileType cpp set shiftwidth=4
+au FileType glsl set shiftwidth=4
 
 "
 
@@ -51,6 +54,16 @@ imap <2-LeftMouse> <nop>
 imap <3-LeftMouse> <nop>
 imap <4-LeftMouse> <nop>
 imap <LeftDrag> <nop>
+
+map <MiddleMouse> <nop>
+map <2-MiddleMouse> <nop>
+map <3-MiddleMouse> <nop>
+map <4-MiddleMouse> <nop>
+
+vmap <Leader>c :norm 0i// <CR>
+vmap <Leader>C :norm ^xxx<CR>
+
+map Q <nop>
 
 set mouse=a
 

@@ -33,4 +33,7 @@ alias @lyza='cd /home/mel/documents/_programming/lisp/lyza/src'
 alias @maru='cd /home/mel/documents/_programming/c/maru/src'
 alias @wm='cd /home/mel/dotfiles/_wm'
 
+alias forth='/home/mel/documents/_programming/zig/untyped/forth/bin/untyped'
+
 alias gpom='git push origin master'
+# alias zig='/home/mel/documents/_programming/zig/_zig/current/zig'

@@ -24,15 +24,23 @@ hi Todo       ctermfg=yellow      ctermbg=none  cterm=bold
 hi Delimiter  ctermfg=gray
 hi Search     ctermfg=blue        ctermbg=white cterm=bold
 
-hi StatusLine   ctermfg=black   ctermbg=white
-hi StatusLineNC ctermfg=magenta ctermbg=white
-hi VertSplit    ctermfg=magenta ctermbg=white
+hi StatusLine   ctermfg=black ctermbg=white
+hi StatusLineNC ctermfg=black ctermbg=gray
+hi VertSplit    ctermfg=green ctermbg=white
+
+hi TabLineFill   ctermfg=black ctermbg=none
+hi TabLine       ctermfg=darkgray ctermbg=black
+hi TabLineSel    ctermfg=yellow  ctermbg=black
 
 hi LineNr               ctermfg=grey                cterm=bold
 hi CursorLineNr         ctermfg=green ctermbg=black cterm=bold
 
 hi cUserFunction        ctermfg=white
 hi cUserFunctionPointer ctermfg=white
+
+hi orthSymbol ctermfg=none
+hi orthQuote  ctermfg=blue
+hi orthDef    ctermfg=green
 
 hi link String         Constant
 hi link Character      Constant

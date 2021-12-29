@@ -11,8 +11,8 @@ workspace_layout tabbed
 for_window [class="QjackCtl"] floating enable
 for_window [class="mpv"] floating enable
 
-for_window [class="main"] floating enable
-for_window [class="float"] floating enable
+for_window [title="main"] floating enable
+for_window [title="float"] floating enable
 
 for_window [class="zoom"] floating enable, border normal 2
 
@@ -26,6 +26,7 @@ assign [class="transmission"] 3
 # ---
 
 font pango:Px437 ATI 8x14 12
+# font lucy tewi:pixelsize=11
 
 set $green #4f814d
 set $gray  #1c1c1c
