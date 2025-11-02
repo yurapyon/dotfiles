@@ -4,7 +4,8 @@ alias umount='sudo umount'
 
 alias rm='rm -I'
 
-alias _ls='ls -1NLv --group-directories-first --color=auto'
+# alias _ls='ls -1NLv --group-directories-first --color=auto'
+alias _ls='ls -1Lv --color=auto'
 # alias ls='printf "\e[1;32;7m%s\e[0m\n" $(pwd); _ls'
 alias ls='_ls'
 export LS_COLORS='di=1;34:fi=39:ow=1;34:ex=39'
@@ -24,7 +25,7 @@ alias ydl='youtube-dl --no-playlist'
 alias conn='sudo netctl stop-all; sudo netctl start'
 alias mpcclip='mpc -f "%artist% %title%" | head -1 | xclip -i -selection clipboard'
 
-export PS1='\[\e[95m\]$(pwd | home 2)\[\e[0m\] '
+# export PS1='\[\e[95m\]$(pwd | home 2)\[\e[0m\] '
 
 alias sx1='startx ~/dotfiles/_wm/sessions/i3'
 
