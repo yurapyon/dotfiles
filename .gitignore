@@ -1,3 +1,5 @@
 _config/mpv/watch_later
 _config/ranger/history
 _config/ranger/.zcompdump
+
+.DS_Store
