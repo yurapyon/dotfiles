@@ -2,17 +2,21 @@
 
 call plug#begin('~/.local/share/nvim/vim-plug')
 
-Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
+" Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'tikhomirov/vim-glsl'
 Plug 'leafo/moonscript-vim'
 Plug 'https://github.com/rust-lang/rust.vim'
 Plug 'https://github.com/ziglang/zig.vim'
-Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+Plug 'prettier/vim-prettier', { 'do': 'npm install --frozen-lockfile --production' }
+Plug 'gpanders/nvim-parinfer'
 
 call plug#end()
 
 let g:parinfer_mode='indent'
+
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
 
 " c/c++
 

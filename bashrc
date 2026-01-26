@@ -5,7 +5,7 @@ alias umount='sudo umount'
 alias rm='rm -I'
 
 # alias _ls='ls -1NLv --group-directories-first --color=auto'
-alias _ls='ls -1Lv --color=auto'
+alias _ls='gls -1NLv --group-directories-first --color=auto'
 # alias ls='printf "\e[1;32;7m%s\e[0m\n" $(pwd); _ls'
 alias ls='_ls'
 export LS_COLORS='di=1;34:fi=39:ow=1;34:ex=39'
@@ -38,3 +38,7 @@ alias forth='/home/mel/documents/_programming/zig/untyped/forth/bin/untyped'
 
 alias gpom='git push origin master'
 # alias zig='/home/mel/documents/_programming/zig/_zig/current/zig'
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
