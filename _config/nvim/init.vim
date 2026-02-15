@@ -10,6 +10,8 @@ Plug 'https://github.com/rust-lang/rust.vim'
 Plug 'https://github.com/ziglang/zig.vim'
 Plug 'prettier/vim-prettier', { 'do': 'npm install --frozen-lockfile --production' }
 Plug 'gpanders/nvim-parinfer'
+Plug 'neovim/nvim-lspconfig'
+Plug 'stevearc/conform.nvim'
 
 call plug#end()
 
@@ -18,6 +20,9 @@ let g:parinfer_mode='indent'
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
 
+syntax enable
+filetype plugin indent on
+
 " c/c++
 
 let g:c_syntax_for_h = 1
@@ -25,7 +30,7 @@ au FileType c set shiftwidth=4
 au FileType cpp set shiftwidth=4
 au FileType glsl set shiftwidth=4
 
-"
+" ===
 
 set expandtab
 
@@ -74,6 +79,10 @@ set mouse=a
 set splitbelow
 set splitright
 
-"
+" ===
+
+" lua vim.lsp.enable('ts_ls')
+
+" ===
 
 colo mochi
