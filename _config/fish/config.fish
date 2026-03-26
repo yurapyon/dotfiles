@@ -1,4 +1,5 @@
 fish_add_path /opt/homebrew/opt/rustup/bin
+fish_add_path /Users/parcel/.cargo/bin
 fish_add_path /opt/homebrew/bin
 
 if status is-interactive
@@ -17,6 +18,18 @@ set fish_autosuggestion_enabled 0
 
 set -x EDITOR nvim
 
+set -x LIBRARY_PATH (brew --prefix)/lib
+
+function _cargo_tr
+  for line in $(cargo tree --depth 1 -e normal --prefix none)
+    set --local pkg (string split ' ' -f1,2 $line)
+    string join '' -- '-p ' $pkg[1] '@' (string trim -l -c 'v' $pkg[2])
+  end
+end
+
+function cargo_doc_imm
+  _cargo_tr | xargs cargo doc --no-deps --open
+end
 
 # BEGIN opam configuration
 # This is useful if you're using opam as it adds:

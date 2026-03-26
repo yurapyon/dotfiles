@@ -1,1 +1,1 @@
-require("mochi").setup()
+require("themes.mochi").setup()

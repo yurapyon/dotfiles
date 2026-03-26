@@ -4,6 +4,7 @@ require("conform").setup({
     lua = { "stylua" },
     ocaml = { "ocamlformat" },
     rust = { "rustfmt" },
+    glsl = { "clang-format" },
   },
   formatters = {
     ocamlformat = {
@@ -20,6 +21,12 @@ require("conform").setup({
         "Spaces",
         "--indent-width",
         "2",
+      },
+    },
+    ["clang-format"] = {
+      prepend_args = {
+        "--style",
+        "{IndentWidth: 4, BasedOnStyle: Chromium}",
       },
     },
   },
