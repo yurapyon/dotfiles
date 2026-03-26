@@ -61,6 +61,6 @@ set splitright
 
 colo mochi
 
-lua require("_init")
+lua require("config.lazy")
 
 " lua vim.lsp.enable('ts_ls')
