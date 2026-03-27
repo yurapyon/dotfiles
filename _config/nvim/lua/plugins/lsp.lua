@@ -1,14 +1,14 @@
+function hide_semantic_hl()
+  vim.api.nvim_set_hl(0, "@lsp.type.function", {})
+
+  for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
+    vim.api.nvim_set_hl(0, group, {})
+  end
+end
+
 return {
   "neovim/nvim-lspconfig",
   lazy = false,
-  dependencies = {
-    -- { "ms-jpq/coq_nvim", branch = "coq" },
-  },
-  init = function()
-    -- vim.g.coq_settings = {
-    -- auto_start = "shut-up",
-    -- }
-  end,
   config = function()
     vim.lsp.enable("rust_analyzer")
     vim.lsp.config("rust_analyzer", {
@@ -44,16 +44,11 @@ return {
       },
     })
 
-    -- Hide semantic highlights for functions
-    vim.api.nvim_set_hl(0, "@lsp.type.function", {})
-    -- Hide all semantic highlights
-    for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
-      vim.api.nvim_set_hl(0, group, {})
-    end
+    hide_semantic_hl()
 
     vim.cmd([[
       set signcolumn=yes
-      " set ut=2000
+      " set ut=3000
       " autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
     ]])
   end,

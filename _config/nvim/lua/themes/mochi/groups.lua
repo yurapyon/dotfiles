@@ -62,6 +62,9 @@ M.setup = function()
     Debug          = { link = "Special" },
 
     NormalFloat    = { bg = colors.dark.black },
+
+    TelescopeSelection   = { reverse = true },
+    TelescopePreviewLine = { reverse = true },
     -- stylua: ignore end
   }
 end
