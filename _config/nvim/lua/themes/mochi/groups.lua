@@ -60,6 +60,8 @@ M.setup = function()
     SpecialChar    = { link = "Special" },
     SpecialComment = { link = "Special" },
     Debug          = { link = "Special" },
+
+    NormalFloat    = { bg = colors.dark.black },
     -- stylua: ignore end
   }
 end

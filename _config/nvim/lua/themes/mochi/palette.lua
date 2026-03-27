@@ -10,7 +10,8 @@ return {
     blue =    "#39548b",
     magenta = "#9e155b",
     white =   "#b8b8b8",
-    black =   "#2f1d1d",
+    black =   "#1f1d1d",
+    -- black =   "#1f1d1d",
     gray  =   "#606060",
     -- stylua: ignore end
   },

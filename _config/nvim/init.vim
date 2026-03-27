@@ -3,10 +3,10 @@ filetype plugin indent on
 
 " c/c++
 
-let g:c_syntax_for_h = 1
-au FileType c set shiftwidth=4
-au FileType cpp set shiftwidth=4
-au FileType glsl set shiftwidth=4
+" let g:c_syntax_for_h = 1
+" au FileType c set shiftwidth=4
+" au FileType cpp set shiftwidth=4
+" au FileType glsl set shiftwidth=4
 
 " ===
 
@@ -62,5 +62,3 @@ set splitright
 colo mochi
 
 lua require("config.lazy")
-
-" lua vim.lsp.enable('ts_ls')

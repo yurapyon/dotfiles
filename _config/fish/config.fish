@@ -10,7 +10,7 @@ if status is-interactive
 end
 
 function fish_prompt
-    string join '' -- (set_color magenta) (prompt_pwd --full-length-dirs 2) (set_color normal) " \$ "
+    string join '' -- (set_color brmagenta) (prompt_pwd --full-length-dirs 2) (set_color normal) " \$ "
 end
 
 set -g fish_greeting
