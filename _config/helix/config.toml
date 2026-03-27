@@ -1,0 +1,10 @@
+theme = "mochi"
+
+[editor]
+"continue-comments" = false
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.lsp]
+snippets = false

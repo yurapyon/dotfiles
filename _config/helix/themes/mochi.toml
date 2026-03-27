@@ -1,0 +1,26 @@
+inherits = "base16_transparent"
+
+"ui.background"               = "#ffffff00"
+"ui.linenr"                   = "white"
+"ui.menu"                     = { fg = "white", bg = "black" }
+"ui.popup"                    = { fg = "white", bg = "black" }
+"ui.cursor"                   = { modifiers = ["reversed"] }
+"comment"                     = { fg = "light-gray", modifiers = ["dim"] }
+"keyword"                     = "green"
+"keyword.control.conditional" = "white"
+"keyword.operator"            = "light-magenta"
+"keyword.directive"           = "green"
+"keyword.storage.type"        = "green"
+"keyword.storage.modifier"    = "light-green"
+"operator"                    = "light-magenta"
+"attribute"                   = "light-blue"
+"special"                     = "light-blue"
+"info"                        = { fg = "light-yellow", modifiers = ["bold"] }
+"type"                        = "light-cyan"
+"namespace"                   = { fg = "light-cyan", modifiers = ["bold"] }
+"variable"                    = "white"
+"function"                    = { fg = "light-magenta", modifiers = ["bold"] }
+"constant.numeric"            = "light-magenta"
+"constant"                    = "light-magenta"
+"string"                      = "light-magenta"
+"variable.other.member"       = "white"

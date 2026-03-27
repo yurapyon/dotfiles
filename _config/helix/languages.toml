@@ -1,0 +1,12 @@
+[language-server.rust-analyzer.config.check]
+command = "clippy"
+
+[language-server.rust-analyzer.config.cargo]
+features = "all"
+
+[[language]]
+name = "toml"
+# https://github.com/tamasfe/taplo/issues/580#issuecomment-2004174721
+roots = ["."]
+language-servers = ["taplo"]
+"auto-format" = true
